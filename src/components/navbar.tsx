@@ -27,6 +27,7 @@ const desktopLinks = [
 
 const communityLinks = [
     { id: "leadership", label: "Leadership" },
+    { id: "bookshelf", label: "Bookshelf" },
     { id: "languages", label: "Languages" },
     { id: "community", label: "Endorsements" },
     { id: "guestbook", label: "Guestbook" },
