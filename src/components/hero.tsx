@@ -45,7 +45,7 @@ export function HeroSection() {
                     </p>
 
                     <div>
-                        <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tighter text-white whitespace-nowrap">
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
                             <span>{profile.name}</span>
                         </h1>
                         <p className="mt-3 flex flex-wrap items-center justify-start gap-3 text-xl text-zinc-300 sm:text-2xl sm:gap-4">

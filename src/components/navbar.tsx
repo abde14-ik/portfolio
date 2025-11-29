@@ -90,17 +90,21 @@ export function Navbar() {
                     </div>
                 </div>
 
-                <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-400 md:flex">
-                    {desktopLinks.map((item) => (
-                        <a
-                            key={item.id}
-                            href={`#${item.id}`}
-                            className="group relative pb-1 transition-colors hover:text-white"
-                        >
-                            {item.label}
-                            <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-zinc-500 transition-transform duration-200 group-hover:scale-x-100" />
-                        </a>
-                    ))}
+                <nav className="hidden items-center gap-4 lg:gap-2 text-sm font-medium text-zinc-400 md:flex">
+                    {desktopLinks.map((item) => {
+                        if (item.id === "community") return null;
+
+                        return (
+                            <a
+                                key={item.id}
+                                href={`#${item.id}`}
+                                className="group relative pb-1 transition-colors hover:text-white"
+                            >
+                                {item.label}
+                                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-zinc-500 transition-transform duration-200 group-hover:scale-x-100" />
+                            </a>
+                        );
+                    })}
 
                     <NavDropdown label="Community">
                         <div className="space-y-1">
@@ -153,7 +157,7 @@ export function Navbar() {
                         <LanguageSwitcher />
                         <Link
                             href="#contact"
-                            className="rounded-full bg-zinc-100 px-3 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white"
+                            className="rounded-full bg-zinc-100 px-5 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit"
                         >
                             {navbar.contact ?? nav.contact}
                         </Link>
