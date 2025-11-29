@@ -186,6 +186,9 @@ export function Navbar() {
                                 {item.label}
                             </a>
                         ))}
+                        <div className="mt-3 flex justify-start">
+                            <LanguageSwitcher />
+                        </div>
                     </div>
                 </div>
             )}
