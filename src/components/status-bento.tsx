@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Activity, BookOpen, TerminalSquare } from "lucide-react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "@/context/language-context";
 
 const floatTransition = {
@@ -14,6 +15,18 @@ const floatTransition = {
 export function StatusBento() {
     const { content } = useLanguage();
     const hero = content.hero;
+    const books = hero.status?.books ?? [];
+    const [bookIndex, setBookIndex] = useState(0);
+
+    useEffect(() => {
+        if (!books.length) return;
+
+        const id = setInterval(() => {
+            setBookIndex((prev) => (prev + 1) % books.length);
+        }, 4000);
+
+        return () => clearInterval(id);
+    }, [books.length]);
 
     return (
         <motion.div
@@ -68,10 +81,41 @@ export function StatusBento() {
                             {hero.statusReadingLabel}
                         </p>
                     </div>
-                    <div className="space-y-0.5">
-                        <p className="text-sm font-semibold text-white">{hero.statusBookValue}</p>
-                        <p className="text-[0.72rem] text-zinc-400">{hero.statusBookAuthor}</p>
-                    </div>
+                    <AnimatePresence mode="wait">
+                        {books.length > 0 ? (
+                            <motion.div
+                                key={bookIndex}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                className="space-y-0.5"
+                            >
+                                <p className="text-sm font-semibold text-white">
+                                    {books[bookIndex]?.title}
+                                </p>
+                                <p className="text-[0.72rem] text-zinc-400">
+                                    {books[bookIndex]?.author}
+                                </p>
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="single"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                className="space-y-0.5"
+                            >
+                                <p className="text-sm font-semibold text-white">
+                                    {hero.statusBookValue}
+                                </p>
+                                <p className="text-[0.72rem] text-zinc-400">
+                                    {hero.statusBookAuthor}
+                                </p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </motion.div>
 
                 {/* Endurance / Training card */}

@@ -58,6 +58,10 @@ export const en = {
             focusSub: "Infrastructure as Code & Automation",
             professionalLabel: "Professional Focus",
             trainingSub: "Marathon Prep",
+            books: [
+                { title: "The Myth of Normal", author: "Dr. Gabor Maté" },
+                { title: "Irrational Man", author: "William Barrett" },
+            ],
         },
         snapshot: {
             focus: "Current Focus",
