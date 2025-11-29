@@ -3,3 +3,8 @@ export function cn(
 ): string {
     return classes.filter(Boolean).join(" ");
 }
+
+export function prefix(path: string): string {
+    const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+    return `${basePath}${path}`;
+}

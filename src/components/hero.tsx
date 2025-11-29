@@ -5,7 +5,7 @@ import { ArrowDownRight, Download } from "lucide-react";
 import { Cairo, Noto_Sans_Tifinagh } from "next/font/google";
 import { profile } from "@/constants/data";
 import { StatusBento } from "@/components/status-bento";
-import { cn } from "@/lib/utils";
+import { cn, prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 
 const heroVariants = {
@@ -82,7 +82,7 @@ export function HeroSection() {
                             <span>{hero.ctaViewProjects}</span>
                         </a>
                         <a
-                            href={hero.resumeUrl}
+                            href={prefix(content.hero.resumeUrl)}
                             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-black px-5 py-2.5 text-sm font-semibold text-zinc-200 shadow-sm transition hover:bg-zinc-900"
                         >
                             <Download className="h-4 w-4" />
