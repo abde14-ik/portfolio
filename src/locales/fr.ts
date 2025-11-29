@@ -321,7 +321,7 @@ export const fr = {
             {
                 title: "The Art of Loving",
                 author: "Erich Fromm",
-                image: "/library/the art of loving.jpg",
+                image: "/the art of loving.jpg",
                 theme: "Discipline active",
                 synopsis:
                     "Fromm soutient que l'amour n'est pas un vague sentiment, mais un art qui exige discipline, concentration et patience pour être maîtrisé.",
@@ -331,7 +331,7 @@ export const fr = {
             {
                 title: "Man for Himself",
                 author: "Erich Fromm",
-                image: "/library/man for himself.jpg",
+                image: "/man for himself.jpg",
                 theme: "Éthique humaniste",
                 synopsis:
                     "Une enquête sur la psychologie de l'éthique, défendant que notre plus grande vertu est d'être fidèles à notre propre nature (productivité).",
@@ -341,7 +341,7 @@ export const fr = {
             {
                 title: "The Art of Being",
                 author: "Erich Fromm",
-                image: "/library/the art of being.jpg",
+                image: "/the art of being.jpg",
                 theme: "Pleine conscience",
                 synopsis:
                     "Un guide pour fonctionner pleinement dans un monde distrait grâce à la pratique de la pleine conscience et au dépassement des illusions.",
@@ -351,7 +351,7 @@ export const fr = {
             {
                 title: "Ethics: A Very Short Introduction",
                 author: "Simon Blackburn",
-                image: "/library/ethics.jpg",
+                image: "/ethics.jpg",
                 theme: "Systèmes moraux",
                 synopsis:
                     "Blackburn explore les grands climats éthiques de notre époque (Kant, utilitarisme) et la manière dont nous justifions nos valeurs.",
@@ -361,7 +361,7 @@ export const fr = {
             {
                 title: "Philosophy: The Basics",
                 author: "Nigel Warburton",
-                image: "/library/philosophy.jpg",
+                image: "/philosophy.jpg",
                 theme: "Logique critique",
                 synopsis:
                     "Une introduction claire aux grandes questions de la réalité, de la science et de l'esprit, invitant à un scepticisme rigoureux.",
@@ -371,7 +371,7 @@ export const fr = {
             {
                 title: "Le Mythe de la Normalité",
                 author: "Dr. Gabor Maté",
-                image: "/library/normal.jpg",
+                image: "/normal.jpg",
                 theme: "Santé systémique",
                 synopsis:
                     "Maté décortique la façon dont la société moderne génère la maladie, en reliant les traumatismes individuels aux pressions systémiques plus larges.",
@@ -381,7 +381,7 @@ export const fr = {
             {
                 title: "L'Homme Irrationnel",
                 author: "William Barrett",
-                image: "/library/irrational-man.jpg",
+                image: "/irrational-man.jpg",
                 theme: "Existentialisme",
                 synopsis:
                     "Un exposé de référence sur la philosophie existentialiste, qui interroge la quête de sens à l'ère mécaniste.",

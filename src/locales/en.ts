@@ -319,7 +319,7 @@ export const en = {
             {
                 title: "The Art of Loving",
                 author: "Erich Fromm",
-                image: "/library/the art of loving.jpg",
+                image: "/the art of loving.jpg",
                 theme: "Active Discipline",
                 synopsis:
                     "Fromm argues that love is not a vague sentiment, but an art requiring discipline, concentration, and patience to master.",
@@ -328,7 +328,7 @@ export const en = {
             {
                 title: "Man for Himself",
                 author: "Erich Fromm",
-                image: "/library/man for himself.jpg",
+                image: "/man for himself.jpg",
                 theme: "Humanistic Ethics",
                 synopsis:
                     "An inquiry into the psychology of ethics, arguing that our highest virtue is to be true to our own nature (productivity).",
@@ -337,7 +337,7 @@ export const en = {
             {
                 title: "The Art of Being",
                 author: "Erich Fromm",
-                image: "/library/the art of being.jpg",
+                image: "/the art of being.jpg",
                 theme: "Mindfulness",
                 synopsis:
                     "A guide to functioning fully in a distracted world through the practice of mindfulness and overcoming illusions.",
@@ -346,7 +346,7 @@ export const en = {
             {
                 title: "Ethics: A Very Short Introduction",
                 author: "Simon Blackburn",
-                image: "/library/ethics.jpg",
+                image: "/ethics.jpg",
                 theme: "Moral Systems",
                 synopsis:
                     "Blackburn explores the major ethical climates of our times (Kant, Utilitarianism) and how we justify our values.",
@@ -355,7 +355,7 @@ export const en = {
             {
                 title: "Philosophy: The Basics",
                 author: "Nigel Warburton",
-                image: "/library/philosophy.jpg",
+                image: "/philosophy.jpg",
                 theme: "Critical Logic",
                 synopsis:
                     "A clear introduction to the big questions of reality, science, and the mind, encouraging rigorous skepticism.",
@@ -365,7 +365,7 @@ export const en = {
             {
                 title: "The Myth of Normal",
                 author: "Dr. Gabor Maté",
-                image: "/library/normal.jpg",
+                image: "/normal.jpg",
                 theme: "Systemic Health",
                 synopsis:
                     "Maté dissects how modern society generates illness, linking individual trauma to broader systemic pressures.",
@@ -375,7 +375,7 @@ export const en = {
             {
                 title: "Irrational Man",
                 author: "William Barrett",
-                image: "/library/irrational-man.jpg",
+                image: "/irrational-man.jpg",
                 theme: "Existentialism",
                 synopsis:
                     "A definitive account of existential philosophy, exploring how we find meaning in a purely mechanistic age.",
