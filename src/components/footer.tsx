@@ -44,7 +44,7 @@ export function Footer() {
   useEffect(() => {
     const id = setInterval(() => {
       setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(id);
   }, [quotes.length]);
@@ -52,7 +52,7 @@ export function Footer() {
   return (
     <footer className="mt-10 border-t border-slate-800/80 pt-6 text-center text-xs text-slate-500">
       <p>
-        © {year} {content.footer.owner}. {content.footer.rights}
+        {year} {content.footer.owner}. {content.footer.rights}
       </p>
       <div className="mt-3 flex justify-center">
         <AnimatePresence mode="wait">
@@ -61,7 +61,7 @@ export function Footer() {
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             dir={isArabic ? "rtl" : "ltr"}
             className={`${currentQuote.font} max-w-2xl text-[0.7rem] text-slate-400 ${isArabic ? "text-right" : "text-center"
               }`}
