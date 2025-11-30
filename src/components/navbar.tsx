@@ -78,7 +78,7 @@ export function Navbar() {
 
     return (
         <>
-            <div className="flex h-16 items-center justify-between px-4 lg:px-6">
+            <div className="flex h-16 items-center justify-between px-4 lg:pl-12 lg:pr-4">
                 <div className="flex items-center gap-3">
                     <button
                         type="button"
