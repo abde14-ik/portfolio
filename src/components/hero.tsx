@@ -48,30 +48,10 @@ export function HeroSection() {
                         <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
                             <span>{profile.name}</span>
                         </h1>
-                        <p className="mt-3 flex flex-wrap items-center justify-start gap-3 text-xl text-zinc-300 sm:text-2xl sm:gap-4">
-                            <span
-                                className={cn(
-                                    notoTifinagh.className,
-                                    "text-xl sm:text-2xl font-extrabold tracking-wide text-zinc-200",
-                                )}
-                            >
-                                {profile.tifinaghName}
-                            </span>
-                            <span className="text-zinc-500">•</span>
-                            <span
-                                className={cn(
-                                    cairo.className,
-                                    "font-bold text-zinc-200 text-[1.4em] sm:text-[1.4em]",
-                                )}
-                            >
-                                {profile.arabicName}
-                            </span>
+                        <p className="mt-4 max-w-xl text-lg sm:text-xl text-zinc-300 leading-relaxed">
+                            {hero.bio}
                         </p>
                     </div>
-
-                    <p className="mt-6 max-w-xl text-sm font-light text-zinc-400 sm:text-base leading-relaxed">
-                        {hero.bio}
-                    </p>
 
                     <div className="flex flex-wrap items-center gap-3">
                         <a

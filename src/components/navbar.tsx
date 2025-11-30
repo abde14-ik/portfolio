@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Activity, Github, Linkedin, Menu, X } from "lucide-react";
-import { Cairo } from "next/font/google";
-import { motion } from "framer-motion";
+import { Cairo, Noto_Sans_Tifinagh } from "next/font/google";
+import { AnimatePresence, motion } from "framer-motion";
 import { profile } from "@/constants/data";
 import { prefix } from "@/lib/utils";
 import { AvatarModal } from "@/components/avatar-modal";
@@ -18,13 +18,33 @@ const cairo = Cairo({
     weight: ["700"],
 });
 
+const notoTifinagh = Noto_Sans_Tifinagh({
+    subsets: ["tifinagh"],
+    weight: "400",
+});
+
 export function Navbar() {
     const [isAvatarOpen, setIsAvatarOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [nameIndex, setNameIndex] = useState(0);
     const { content } = useLanguage();
 
     const nav = content.nav;
     const navbar = content.navbar ?? {};
+
+    const names = [
+        { text: "Abdelilah IKBI", font: "font-sans" },
+        { text: "اقبي عبد الاله", font: cairo.className },
+        { text: "ⵉⵇⴱⵉ ⵄⴰⴱⴷ ⵍⵉⵍⴰⵀ", font: notoTifinagh.className },
+    ];
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setNameIndex((prev) => (prev + 1) % names.length);
+        }, 10000);
+
+        return () => clearInterval(id);
+    }, []);
 
     const desktopLinks = (navbar.items as { id: string; label: string }[] | undefined) ?? [
         { id: "about", label: nav.about },
@@ -77,15 +97,19 @@ export function Navbar() {
                         </motion.div>
                     </button>
                     <div className="flex flex-col leading-tight">
-                        <div className="flex flex-wrap items-center gap-1.5">
-                            <span className="text-sm font-semibold text-slate-100 dark:text-slate-100">
-                                {profile.name}
-                            </span>
-                            <span
-                                className={`${cairo.className} text-sm font-bold text-slate-100`}
-                            >
-                                {profile.arabicName}
-                            </span>
+                        <div className="flex flex-wrap items-center gap-1.5 min-w-[9rem]">
+                            <AnimatePresence mode="wait">
+                                <motion.span
+                                    key={names[nameIndex].text}
+                                    initial={{ opacity: 0, y: 4 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -4 }}
+                                    transition={{ duration: 0.25 }}
+                                    className={`text-sm font-semibold text-slate-100 dark:text-slate-100 ${names[nameIndex].font}`}
+                                >
+                                    {names[nameIndex].text}
+                                </motion.span>
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
