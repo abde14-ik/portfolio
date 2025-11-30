@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { Activity, Calendar, ChevronLeft, ChevronRight, Users, X } from "lucide-react";
+import { Activity, Calendar, ChevronLeft, ChevronRight, Instagram, Users, X } from "lucide-react";
 import { prefix } from "@/lib/utils";
 
 export type LeadershipDetails = {
@@ -229,14 +229,25 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                         {stats.platform}
                                                     </span>
                                                 )}
-                                                <a
-                                                    href="https://www.strava.com/clubs/1508184"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="inline-flex items-center gap-1 rounded-full bg-[#FC4C02] px-3 py-1 text-[0.7rem] font-semibold text-slate-950 shadow-sm shadow-black/40 transition hover:bg-[#ff6a28]"
-                                                >
-                                                    <span>Join on Strava</span>
-                                                </a>
+                                                <div className="flex flex-wrap items-center gap-2">
+                                                    <a
+                                                        href="https://www.strava.com/clubs/1508184"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-1 rounded-full bg-[#FC4C02] px-3 py-1 text-[0.7rem] font-semibold text-slate-950 shadow-sm shadow-black/40 transition hover:bg-[#ff6a28]"
+                                                    >
+                                                        <span>Join on Strava</span>
+                                                    </a>
+                                                    <a
+                                                        href="https://www.instagram.com/inpt_runners/?hl=en"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-1 rounded-full bg-[#E4405F] px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:bg-[#ff6c7d]"
+                                                    >
+                                                        <Instagram className="h-3 w-3" />
+                                                        <span>Follow on Instagram</span>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     )}
