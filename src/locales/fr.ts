@@ -353,6 +353,43 @@ export const fr = {
                 org: "Club CIT (Club Informatique & Télécom)",
                 description:
                     "Animation d'ateliers sur le Cloud & CI/CD. Mentorat de pairs sur la conteneurisation et les meilleures pratiques d'automatisation.",
+                details: {
+                    headline:
+                        "Créé en 1998, le CIT est le premier club de l'INPT. En tant que Responsable DevOps, j'ai conçu un cursus complet 'Zero to Hero'.",
+                    description:
+                        "J'ai structuré un parcours d'apprentissage semestriel couvrant des internes de l'OS à la Conteneurisation, comblant le fossé entre théorie et opérations.",
+                    featureImage: "/images/leadership/cit-main.jpg",
+                    logo: "/images/cit-logo.png",
+                    stats: {
+                        role: "Resp. Cellule DevOps",
+                        since: "Depuis 1998",
+                        impact: "7+ Modules",
+                        members: "Communauté Active",
+                    },
+                    resource: {
+                        label: "Accéder aux Cours",
+                        url: "https://github.com/CitInpt/CIT-Courses/tree/main/24-25/DevOpsCell",
+                        description:
+                            "Accédez à mes supports : Linux, Réseaux, Virtualisation et Docker.",
+                    },
+                    events: [
+                        {
+                            title: "Module 1 : Fondamentaux Systèmes",
+                            images: ["/images/leadership/cit-1.jpg"],
+                            desc: "Plongée dans les Systèmes d'Exploitation, le noyau Linux et les fondamentaux Réseaux (Couches 1-7).",
+                        },
+                        {
+                            title: "Module 2 : Infra & Virtualisation",
+                            images: ["/images/leadership/cit-2.jpg"],
+                            desc: "Maîtrise des Hyperviseurs Type 1/2 et transition de l'IT traditionnel vers la culture DevOps.",
+                        },
+                        {
+                            title: "Module 3 : Docker & Conteneurs",
+                            images: ["/images/leadership/cit-3.jpg"],
+                            desc: "Ateliers pratiques passant des VMs aux Conteneurs, rédaction de Dockerfiles et bases de l'orchestration.",
+                        },
+                    ],
+                },
             },
             {
                 role: "Vice-Président",

@@ -10,17 +10,27 @@ import { prefix } from "@/lib/utils";
 export type LeadershipDetails = {
     headline: string;
     description: string;
+    featureImage?: string;
+    logo?: string;
     stats?: {
         members?: string;
         weeklyDistance?: string;
         activities?: string;
         platform?: string;
         growth?: string;
+        role?: string;
+        since?: string;
+        impact?: string;
     };
     subInitiative?: {
         title: string;
         description: string;
         logo?: string;
+    };
+    resource?: {
+        label: string;
+        url: string;
+        description: string;
     };
     events?: {
         title: string;
@@ -158,6 +168,17 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                     <p className="text-xs text-slate-300 sm:text-sm">
                                         {description}
                                     </p>
+                                )}
+
+                                {details.featureImage && (
+                                    <div className="mb-6 mt-4 relative w-full aspect-video overflow-hidden rounded-xl border border-white/10 shadow-2xl">
+                                        <Image
+                                            src={prefix(details.featureImage)}
+                                            alt="CIT Board"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
                                 )}
 
                                 {stats &&

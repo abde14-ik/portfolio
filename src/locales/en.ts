@@ -351,6 +351,43 @@ export const en = {
                 period: "09/2024 - 05/2025",
                 description:
                     "Led workshops on Cloud & CI/CD. Mentored peers in containerization and automation best practices.",
+                details: {
+                    headline:
+                        "Founded in 1998, CIT is the first extracurricular club at INPT. As Head of the DevOps Cell, I designed a complete 'Zero to Hero' curriculum.",
+                    description:
+                        "I structured a semester-long learning path covering everything from OS internals to Containerization, bridging the gap between academic theory and industry operations.",
+                    featureImage: "/images/leadership/cit-main.jpg",
+                    logo: "/images/cit-logo.png",
+                    stats: {
+                        role: "Head of DevOps Cell",
+                        since: "Est. 1998",
+                        impact: "7+ Core Modules",
+                        members: "Active Community",
+                    },
+                    resource: {
+                        label: "Access Course Materials",
+                        url: "https://github.com/CitInpt/CIT-Courses/tree/main/24-25/DevOpsCell",
+                        description:
+                            "Access my full slide decks: Linux, Networking, Virtualization, and Docker.",
+                    },
+                    events: [
+                        {
+                            title: "Module 1: Systems Foundations",
+                            images: ["/images/leadership/cit-1.jpg"],
+                            desc: "Deep dive into Operating Systems, Linux Kernel internals, and Networking fundamentals (Layers 1-7).",
+                        },
+                        {
+                            title: "Module 2: Infra & Virtualization",
+                            images: ["/images/leadership/cit-2.jpg"],
+                            desc: "Mastering Type 1/Type 2 Hypervisors and the shift from traditional IT to DevOps culture.",
+                        },
+                        {
+                            title: "Module 3: Docker & Containers",
+                            images: ["/images/leadership/cit-3.jpg"],
+                            desc: "Hands-on workshops moving from VMs to Containers, writing Dockerfiles, and orchestration basics.",
+                        },
+                    ],
+                },
             },
             {
                 role: "Vice President",
