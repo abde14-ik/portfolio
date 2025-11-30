@@ -365,7 +365,7 @@ export const fr = {
                         role: "Resp. Cellule DevOps",
                         since: "Depuis 1998",
                         impact: "7+ Sessions",
-                        members: "Communauté Active",
+                        members: "25–35 étudiants par séance en salle",
                     },
                     resource: {
                         label: "Accéder aux Cours",

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { Activity, Calendar, ChevronLeft, ChevronRight, Instagram, Users, X } from "lucide-react";
+import { Activity, Calendar, ChevronLeft, ChevronRight, Github, Instagram, Users, X } from "lucide-react";
 import { prefix } from "@/lib/utils";
 
 export type LeadershipDetails = {
@@ -286,6 +286,15 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                     >
                                                         <Instagram className="h-3 w-3" />
                                                         <span>Follow CIT on Instagram</span>
+                                                    </a>
+                                                    <a
+                                                        href="https://github.com/CitInpt/CIT-Courses/tree/main/24-25/DevOpsCell"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="inline-flex items-center gap-1 rounded-full bg-slate-800 px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:bg-slate-700"
+                                                    >
+                                                        <Github className="h-3 w-3" />
+                                                        <span>View courses on GitHub</span>
                                                     </a>
                                                 </div>
                                             )}

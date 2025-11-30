@@ -363,7 +363,7 @@ export const en = {
                         role: "Head of DevOps Cell",
                         since: "Est. 1998",
                         impact: "7+ Sessions",
-                        members: "Active Community",
+                        members: "25–35 students per classroom session",
                     },
                     resource: {
                         label: "Access Course Materials",
