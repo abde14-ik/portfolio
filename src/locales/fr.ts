@@ -72,7 +72,7 @@ export const fr = {
         statusBookAuthor: "Dr. Gabor Maté",
         statusBookSubtitle: "Trauma, Illness & Healing in a Toxic Culture",
         statusRunLabel: "Distance totale",
-        statusRunValue: "846 km",
+        statusRunValue: "853,3 km",
         statusRunSubtitle: "Marathon PB: 3h 39m · 5K: 18:59",
         statusFocusLabel: "Focus Actuel",
         statusFocusValue: "Ingénierie Cloud-Native",

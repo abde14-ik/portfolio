@@ -51,14 +51,9 @@ export type LeadershipModalProps = {
 };
 
 export function LeadershipModal({ isOpen, onClose, org, role, period, logo, details }: LeadershipModalProps) {
-    const [mounted, setMounted] = useState(false);
     const [imageIndex, setImageIndex] = useState(0);
     const [activeEventIndex, setActiveEventIndex] = useState<number | null>(null);
     const [lightboxIndex, setLightboxIndex] = useState(0);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -68,7 +63,9 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
         return () => clearInterval(id);
     }, []);
 
-    if (!mounted) return null;
+    if (!isOpen) {
+        return null;
+    }
 
     const { headline, description, stats, subInitiative, events, resource } = details;
 
