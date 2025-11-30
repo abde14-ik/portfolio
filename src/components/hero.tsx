@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { ArrowDownRight, Download } from "lucide-react";
+import { ArrowDownRight, Download, MapPin } from "lucide-react";
 import { profile } from "@/constants/data";
 import { StatusBento } from "@/components/status-bento";
 import { prefix } from "@/lib/utils";
@@ -25,10 +25,10 @@ export function HeroSection() {
             variants={heroVariants}
             transition={{ duration: 0.7, ease: "easeOut" }}
         >
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-16 xl:grid-cols-[1.2fr_0.8fr] xl:items-center">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-16 xl:grid-cols-[1.1fr_0.9fr] xl:items-center">
                 {/* Left column: intro and CTAs */}
                 <div className="relative z-10 space-y-6">
-                    <p className="flex items-center gap-2 text-[0.7rem] font-mono text-amber-400 sm:text-xs">
+                    <p className="flex items-center gap-2 text-[0.7rem] font-semibold text-amber-400 sm:text-xs">
                         <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
                         <span>{hero.statusDot}</span>
                     </p>
@@ -37,7 +37,7 @@ export function HeroSection() {
                         <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
                             <span>{profile.name}</span>
                         </h1>
-                        <p className="mt-2 text-lg md:text-xl font-bold text-amber-400">
+                        <p className="mt-2 text-lg md:text-xl text-white">
                             {hero.badge}
                         </p>
                         {hero.bio && hero.bio !== hero.badge && (
@@ -64,8 +64,9 @@ export function HeroSection() {
                         </a>
                     </div>
 
-                    <p className="mt-3 text-xs text-zinc-400 sm:text-sm">
-                        {hero.locationMeta}
+                    <p className="mt-3 flex items-center gap-2 text-xs text-zinc-400 sm:text-sm">
+                        <MapPin className="h-3 w-3 text-amber-400" aria-hidden="true" />
+                        <span>{hero.locationMeta}</span>
                     </p>
                 </div>
 

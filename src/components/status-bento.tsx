@@ -30,19 +30,19 @@ export function StatusBento() {
 
     return (
         <motion.div
-            className="rounded-3xl border border-white/5 bg-[#121212] p-4 text-xs text-zinc-200 shadow-xl shadow-black/60 sm:p-5"
+            className="rounded-3xl border border-white/5 bg-[#121212] px-5 py-3 text-xs text-zinc-200 shadow-xl shadow-black/60 sm:px-6 sm:py-4"
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         >
-            <div className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-400">
+            <div className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-400">
                 <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
                 <span>{hero.statusTitle}</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-3">
                 {/* Engineering Focus – large card spanning 2 columns */}
                 <motion.div
-                    className="col-span-2 flex items-center justify-between gap-3 rounded-2xl border border-white/5 bg-[#121212] px-3 py-3 shadow-sm shadow-black/40 transition-colors hover:bg-zinc-900"
+                    className="col-span-2 flex items-center justify-between gap-3 rounded-2xl border border-white/5 bg-[#121212] px-3 py-2.5 shadow-sm shadow-black/40 transition-colors hover:bg-zinc-900"
                     animate={{ y: [0, -4, 0] }}
                     transition={{ ...floatTransition, delay: 0.2 }}
                 >
@@ -69,7 +69,7 @@ export function StatusBento() {
 
                 {/* Reading card */}
                 <motion.div
-                    className="flex flex-col justify-between gap-2 rounded-2xl border border-white/5 bg-[#121212] px-3 py-3 shadow-sm shadow-black/40 transition-colors hover:bg-zinc-900"
+                    className="flex flex-col justify-between gap-2 rounded-2xl border border-white/5 bg-[#121212] px-3 py-2.5 shadow-sm shadow-black/40 transition-colors hover:bg-zinc-900"
                     animate={{ y: [0, -3, 0] }}
                     transition={{ ...floatTransition, delay: 0.6 }}
                 >
