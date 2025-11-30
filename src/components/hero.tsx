@@ -2,26 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ArrowDownRight, Download } from "lucide-react";
-import { Cairo, Noto_Sans_Tifinagh } from "next/font/google";
 import { profile } from "@/constants/data";
 import { StatusBento } from "@/components/status-bento";
-import { cn, prefix } from "@/lib/utils";
+import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 
 const heroVariants = {
     hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0 },
 };
-
-const cairo = Cairo({
-    subsets: ["arabic"],
-    weight: "400",
-});
-
-const notoTifinagh = Noto_Sans_Tifinagh({
-    subsets: ["tifinagh"],
-    weight: "400",
-});
 
 export function HeroSection() {
     const { content } = useLanguage();
@@ -48,7 +37,10 @@ export function HeroSection() {
                         <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
                             <span>{profile.name}</span>
                         </h1>
-                        <p className="mt-4 max-w-xl text-lg sm:text-xl text-zinc-300 leading-relaxed">
+                        <p className="mt-2 text-lg md:text-xl font-mono text-amber-400">
+                            Engineering student specializing in distributed systems, cloud-native infrastructures, and CI/CD automation.
+                        </p>
+                        <p className="mt-4 max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed">
                             {hero.bio}
                         </p>
                     </div>

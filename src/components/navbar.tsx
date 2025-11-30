@@ -26,21 +26,21 @@ const notoTifinagh = Noto_Sans_Tifinagh({
 export function Navbar() {
     const [isAvatarOpen, setIsAvatarOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [nameIndex, setNameIndex] = useState(0);
+    const [index, setIndex] = useState(0);
     const { content } = useLanguage();
 
     const nav = content.nav;
     const navbar = content.navbar ?? {};
 
-    const names = [
-        { text: "Abdelilah IKBI", font: "font-sans" },
-        { text: "اقبي عبد الاله", font: cairo.className },
-        { text: "ⵉⵇⴱⵉ ⵄⴰⴱⴷ ⵍⵉⵍⴰⵀ", font: notoTifinagh.className },
+    const identities = [
+        { text: "Abdelilah IKBI", font: "font-sans", lang: "en" },
+        { text: "اقبي عبد الاله", font: cairo.className, lang: "ar" },
+        { text: "ⵉⵇⴱⵉ ⵄⴰⴱⴷ ⵍⵉⵍⴰⵀ", font: notoTifinagh.className, lang: "ber" },
     ];
 
     useEffect(() => {
         const id = setInterval(() => {
-            setNameIndex((prev) => (prev + 1) % names.length);
+            setIndex((prev) => (prev + 1) % identities.length);
         }, 10000);
 
         return () => clearInterval(id);
@@ -97,17 +97,18 @@ export function Navbar() {
                         </motion.div>
                     </button>
                     <div className="flex flex-col leading-tight">
-                        <div className="flex flex-wrap items-center gap-1.5 min-w-[9rem]">
+                        <div className="flex flex-wrap items-center gap-1.5 min-w-[140px]">
                             <AnimatePresence mode="wait">
                                 <motion.span
-                                    key={names[nameIndex].text}
-                                    initial={{ opacity: 0, y: 4 }}
+                                    key={identities[index].text}
+                                    initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -4 }}
+                                    exit={{ opacity: 0, y: -5 }}
                                     transition={{ duration: 0.25 }}
-                                    className={`text-sm font-semibold text-slate-100 dark:text-slate-100 ${names[nameIndex].font}`}
+                                    className={`text-sm font-semibold text-slate-100 dark:text-slate-100 ${identities[index].font}`}
+                                    lang={identities[index].lang}
                                 >
-                                    {names[nameIndex].text}
+                                    {identities[index].text}
                                 </motion.span>
                             </AnimatePresence>
                         </div>

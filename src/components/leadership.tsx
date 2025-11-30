@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Activity, Terminal, Sigma, ArrowRight, Maximize2 } from "lucide-react";
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 import { LeadershipModal } from "@/components/leadership-modal";
@@ -32,11 +31,6 @@ const cardVariants = {
         transition: { duration: 0.4 },
     },
 };
-
-const playfair = Playfair_Display({
-    subsets: ["latin"],
-    weight: ["600", "700"],
-});
 
 export function LeadershipSection() {
     const { content } = useLanguage();
@@ -69,7 +63,7 @@ export function LeadershipSection() {
                     </p>
                     <div className="h-px flex-1 bg-gradient-to-r from-amber-300/60 to-transparent" />
                 </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white">
                     {leadership.humanSideTitle ?? leadership.heading}
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
@@ -167,9 +161,7 @@ export function LeadershipSection() {
                                             <p className="text-[0.65rem] font-mono uppercase tracking-[0.18em] text-gold">
                                                 {item.period} · {item.org}
                                             </p>
-                                            <h3
-                                                className={`${playfair.className} text-xl md:text-2xl font-semibold text-slate-100`}
-                                            >
+                                            <h3 className="text-lg md:text-xl font-semibold text-slate-100">
                                                 {item.role}
                                             </h3>
                                         </div>
