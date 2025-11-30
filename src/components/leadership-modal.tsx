@@ -71,6 +71,9 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
 
     const { headline, description, stats, subInitiative, events } = details;
 
+    const isInptRunners = org.includes("INPT Runners");
+    const isCitClub = org.includes("CIT Club");
+
     const openEventLightbox = (eventIndex: number, startIndex: number = 0) => {
         setActiveEventIndex(eventIndex);
         setLightboxIndex(startIndex);
@@ -244,32 +247,48 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                                 )}
                                             </div>
 
-                                            <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-                                                {stats.platform && (
-                                                    <span className="text-[0.7rem] text-teal-100/90">
-                                                        {stats.platform}
-                                                    </span>
-                                                )}
-                                                <div className="flex flex-wrap items-center gap-2">
+                                            {isInptRunners && (
+                                                <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                                                    {stats.platform && (
+                                                        <span className="text-[0.7rem] text-teal-100/90">
+                                                            {stats.platform}
+                                                        </span>
+                                                    )}
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        <a
+                                                            href="https://www.strava.com/clubs/1508184"
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="inline-flex items-center gap-1 rounded-full bg-[#FC4C02] px-3 py-1 text-[0.7rem] font-semibold text-slate-950 shadow-sm shadow-black/40 transition hover:bg-[#ff6a28]"
+                                                        >
+                                                            <span>Join on Strava</span>
+                                                        </a>
+                                                        <a
+                                                            href="https://www.instagram.com/inpt_runners/?hl=en"
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="inline-flex items-center gap-1 rounded-full bg-[#E4405F] px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:bg-[#ff6c7d]"
+                                                        >
+                                                            <Instagram className="h-3 w-3" />
+                                                            <span>Follow on Instagram</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {isCitClub && (
+                                                <div className="mt-3 flex flex-wrap items-center justify-end gap-2">
                                                     <a
-                                                        href="https://www.strava.com/clubs/1508184"
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                        className="inline-flex items-center gap-1 rounded-full bg-[#FC4C02] px-3 py-1 text-[0.7rem] font-semibold text-slate-950 shadow-sm shadow-black/40 transition hover:bg-[#ff6a28]"
-                                                    >
-                                                        <span>Join on Strava</span>
-                                                    </a>
-                                                    <a
-                                                        href="https://www.instagram.com/inpt_runners/?hl=en"
+                                                        href="https://www.instagram.com/cit.inpt/?hl=en"
                                                         target="_blank"
                                                         rel="noreferrer"
                                                         className="inline-flex items-center gap-1 rounded-full bg-[#E4405F] px-3 py-1 text-[0.7rem] font-semibold text-slate-50 shadow-sm shadow-black/40 transition hover:bg-[#ff6c7d]"
                                                     >
                                                         <Instagram className="h-3 w-3" />
-                                                        <span>Follow on Instagram</span>
+                                                        <span>Follow CIT on Instagram</span>
                                                     </a>
                                                 </div>
-                                            </div>
+                                            )}
                                         </div>
                                     )}
 
