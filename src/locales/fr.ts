@@ -34,7 +34,7 @@ export const fr = {
         endorsements: "Avis",
         guestbook: "Livre d'Or",
         contact: "Contact",
-        subtitle: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués.",
+        subtitle: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
     },
     common: {
         present: "Présent",
@@ -45,8 +45,8 @@ export const fr = {
     },
     hero: {
         avatar: "/ikbi.jpg",
-        badge: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués.",
-        bio: "Élève ingénieur à l'INPT spécialisé dans les systèmes distribués, les infrastructures Cloud-Native et l'automatisation CI/CD. Passionné par l'architecture de solutions résilientes et évolutives.",
+        badge: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
+        bio: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
         statusDot: "Ouvert aux opportunités PFE",
         location: "Basé au Maroc",
         remote: "Ouvert à l'International & Remote",

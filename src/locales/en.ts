@@ -32,7 +32,7 @@ export const en = {
         endorsements: "Endorsements",
         guestbook: "Guestbook",
         contact: "Contact me",
-        subtitle: "Engineering student at INPT specializing in distributed systems.",
+        subtitle: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
     },
     common: {
         present: "Present",
@@ -43,8 +43,8 @@ export const en = {
     },
     hero: {
         avatar: "/ikbi.jpg",
-        badge: "Engineering student at INPT specializing in distributed systems.",
-        bio: "Engineering student at INPT specializing in distributed systems, cloud-native infrastructures, and CI/CD automation. Passionate about building resilient, scalable solutions in the cloud.",
+        badge: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
+        bio: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
         statusDot: "Open to PFE Internship",
         location: "Based in Morocco",
         remote: "Open to International & Remote",

@@ -33,7 +33,7 @@ export type Profile = {
 
 export const profile: Profile = {
     name: "Abdelilah IKBI",
-    title: "Engineering student at INPT specializing in distributed systems.",
+    title: "Cloud, Infrastructure & DevOps Engineering Student",
     goal: "Combining technical discipline with a human-centric approach to automation.",
     location: "Morocco (Open to international/remote)",
     email: "abdeikbi200@gmail.com",

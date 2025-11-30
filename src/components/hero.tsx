@@ -37,8 +37,8 @@ export function HeroSection() {
                         <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold tracking-tighter text-white whitespace-nowrap">
                             <span>{profile.name}</span>
                         </h1>
-                        <p className="mt-2 text-lg md:text-xl font-mono text-amber-400">
-                            Engineering student specializing in distributed systems, cloud-native infrastructures, and CI/CD automation.
+                        <p className="mt-2 text-lg md:text-xl font-bold text-amber-400">
+                            {hero.badge}
                         </p>
                         <p className="mt-4 max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed">
                             {hero.bio}

@@ -131,7 +131,7 @@ export function Navbar() {
                         );
                     })}
 
-                    <NavDropdown label="Community">
+                    <NavDropdown label={navbar.community ?? "Community"}>
                         <div className="space-y-1">
                             {communityLinks.map((item) => (
                                 <a
