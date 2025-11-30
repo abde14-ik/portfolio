@@ -304,6 +304,7 @@ export const fr = {
                         "INPT Runners est le club officiel de course de l'INPT, unissant les étudiants par la passion du mouvement et de l'endurance.",
                     description:
                         "Que vous sprintiez, trottiniez ou débutiez à peine — nous courons ensemble, nous progressons ensemble.",
+                    featureImage: "/images/events/runners-main.jpg",
                     stats: {
                         members: "94+ Membres",
                         weeklyDistance: "450+ km",
