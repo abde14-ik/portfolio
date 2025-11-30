@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Activity, Terminal, Sigma, ArrowRight, Maximize2 } from "lucide-react";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 import { LeadershipModal } from "@/components/leadership-modal";
@@ -12,6 +13,30 @@ const sectionVariants = {
     hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0 },
 };
+
+const cardsContainerVariants = {
+    hidden: { opacity: 0, y: 12 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 24, scale: 0.96 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.4 },
+    },
+};
+
+const playfair = Playfair_Display({
+    subsets: ["latin"],
+    weight: ["600", "700"],
+});
 
 export function LeadershipSection() {
     const { content } = useLanguage();
@@ -37,9 +62,19 @@ export function LeadershipSection() {
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
-                    {leadership.heading}
+            <header className="mb-10 space-y-4">
+                <div className="flex items-center gap-3">
+                    <p
+                        className={`${playfair.className} text-xs font-semibold uppercase tracking-[0.28em] text-gold`}
+                    >
+                        {leadership.humanSideLabel}
+                    </p>
+                    <div className="h-px flex-1 bg-gradient-to-r from-gold/50 to-transparent" />
+                </div>
+                <h2
+                    className={`${playfair.className} text-4xl md:text-5xl font-bold tracking-tight text-slate-100`}
+                >
+                    {leadership.humanSideTitle ?? leadership.heading}
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
                     {leadership.subheading}
@@ -61,19 +96,32 @@ export function LeadershipSection() {
                     </span>
                 </div>
 
-                <div className="mt-4 grid gap-4 md:grid-cols-3">
+                <motion.div
+                    className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3"
+                    variants={cardsContainerVariants}
+                >
                     {volunteering.map((item) => {
                         const teaserImage =
+                            item.details?.featureImage ??
                             item.logo ??
                             item.details?.logo ??
                             item.details?.events?.[0]?.images?.[0];
 
                         return (
-                            <div
+                            <motion.div
                                 key={`${item.org}-${item.role}`}
                                 onClick={() => handleCardClick(item)}
+                                variants={cardVariants}
                                 className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-slate-950/60 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-transform transition-colors hover:-translate-y-1 hover:shadow-2xl hover:shadow-violet-900/20 hover:border-violet-500/50 ${item.details ? "cursor-pointer" : "cursor-default opacity-80"
                                     } ${item.org.includes("INPT Runners") ? "animate-pulse" : ""}`}
+                                onMouseMove={(event) => {
+                                    const card = event.currentTarget;
+                                    const rect = card.getBoundingClientRect();
+                                    const x = event.clientX - rect.left;
+                                    const y = event.clientY - rect.top;
+                                    card.style.setProperty("--mouse-x", `${x}px`);
+                                    card.style.setProperty("--mouse-y", `${y}px`);
+                                }}
                             >
                                 {teaserImage && (
                                     <div className="pointer-events-none absolute inset-0">
@@ -87,6 +135,14 @@ export function LeadershipSection() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/90 to-midnight/40" />
                                     </div>
                                 )}
+
+                                <div
+                                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                                    style={{
+                                        background:
+                                            "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139,92,246,0.18), transparent 40%)",
+                                    }}
+                                />
 
                                 {item.details && (
                                     <div className="pointer-events-none absolute right-3 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
@@ -111,14 +167,15 @@ export function LeadershipSection() {
                                     )}
 
                                     <div className="flex items-start justify-between gap-2">
-                                        <div>
-                                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
-                                                {item.period}
+                                        <div className="space-y-2">
+                                            <p className="text-[0.65rem] font-mono uppercase tracking-[0.18em] text-gold">
+                                                {item.period} · {item.org}
                                             </p>
-                                            <h4 className="mt-1 text-sm font-semibold text-slate-50">
+                                            <h3
+                                                className={`${playfair.className} text-xl md:text-2xl font-semibold text-slate-100`}
+                                            >
                                                 {item.role}
-                                            </h4>
-                                            <p className="text-xs text-slate-300">{item.org}</p>
+                                            </h3>
                                         </div>
                                         <span
                                             className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/80 ${item.org.includes("INPT Runners")
@@ -134,21 +191,21 @@ export function LeadershipSection() {
                                         </span>
                                     </div>
 
-                                    <p className="mt-3 text-xs text-slate-300">{item.description}</p>
+                                    <p className="mt-3 text-xs text-slate-300 line-clamp-3">{item.description}</p>
 
                                     {item.details && (
-                                        <div className="mt-3">
-                                            <div className="group/cta inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-medium text-slate-100 shadow-sm shadow-black/40 backdrop-blur-sm transition hover:border-gold/50 hover:bg-gold/10 hover:text-gold">
+                                        <div className="mt-4">
+                                            <div className="group/cta inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-medium text-slate-100 shadow-sm shadow-black/40 backdrop-blur-sm transform translate-y-2 opacity-0 transition hover:border-gold/50 hover:bg-gold/10 hover:text-gold group-hover:translate-y-0 group-hover:opacity-100">
                                                 <span>See impact</span>
                                                 <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover/cta:translate-x-1" />
                                             </div>
                                         </div>
                                     )}
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
                 {selectedItem?.details && (
                     <LeadershipModal
                         isOpen={isModalOpen}
