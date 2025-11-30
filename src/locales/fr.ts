@@ -305,8 +305,10 @@ export const fr = {
                     description:
                         "Que vous sprintiez, trottiniez ou débutiez à peine — nous courons ensemble, nous progressons ensemble.",
                     stats: {
-                        members: "94+ Membres Strava",
-                        growth: "Communauté Grandissante",
+                        members: "94+ Membres",
+                        weeklyDistance: "450+ km",
+                        activities: "Sorties Hebdo",
+                        platform: "Sur Strava",
                     },
                     subInitiative: {
                         title: "She Runs INPT",

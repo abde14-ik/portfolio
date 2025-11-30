@@ -302,8 +302,10 @@ export const en = {
                     description:
                         "Whether you're sprinting, jogging, or just starting out — we run together, we grow together, we strive.",
                     stats: {
-                        members: "94+ Strava Members",
-                        growth: "Growing Community",
+                        members: "94+ Members",
+                        weeklyDistance: "450+ km",
+                        activities: "Run Weekly",
+                        platform: "On Strava",
                     },
                     subInitiative: {
                         title: "She Runs INPT",

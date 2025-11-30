@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Users, X } from "lucide-react";
+import { Activity, Calendar, ChevronLeft, ChevronRight, Users, X } from "lucide-react";
 import { prefix } from "@/lib/utils";
 
 export type LeadershipDetails = {
@@ -12,6 +12,9 @@ export type LeadershipDetails = {
     description: string;
     stats?: {
         members?: string;
+        weeklyDistance?: string;
+        activities?: string;
+        platform?: string;
         growth?: string;
     };
     subInitiative?: {
@@ -157,21 +160,86 @@ export function LeadershipModal({ isOpen, onClose, org, role, period, logo, deta
                                     </p>
                                 )}
 
-                                {stats && (stats.members || stats.growth) && (
-                                    <div className="mt-2 flex flex-wrap items-center gap-3 rounded-2xl border border-teal-500/40 bg-teal-900/10 px-3 py-2 text-xs sm:text-[0.8rem]">
-                                        <div className="flex items-center gap-2 text-teal-300">
-                                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15">
-                                                <Users className="h-4 w-4" />
-                                            </span>
-                                            <span className="font-semibold">{stats.members}</span>
+                                {stats &&
+                                    (stats.members ||
+                                        stats.weeklyDistance ||
+                                        stats.activities ||
+                                        stats.platform) && (
+                                        <div className="mt-2 rounded-2xl border border-teal-500/40 bg-teal-900/10 px-3 py-3 text-xs sm:text-[0.8rem]">
+                                            <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+                                                {stats.members && (
+                                                    <div className="flex items-center gap-2 text-teal-200">
+                                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-teal-500/15 text-teal-300">
+                                                            <Users className="h-4 w-4" />
+                                                        </span>
+                                                        <div>
+                                                            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-teal-200/80">
+                                                                Members
+                                                            </p>
+                                                            <p className="text-xs font-semibold text-teal-50">
+                                                                {stats.members}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {stats.weeklyDistance && (
+                                                    <div className="flex items-center gap-2 text-amber-200">
+                                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-amber-500/15 text-amber-300">
+                                                            <Activity className="h-4 w-4" />
+                                                        </span>
+                                                        <div>
+                                                            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-amber-200/80">
+                                                                Weekly Distance
+                                                            </p>
+                                                            <p className="text-xs font-semibold text-amber-50">
+                                                                {stats.weeklyDistance}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                {(stats.activities || stats.platform) && (
+                                                    <div className="flex items-center gap-2 text-sky-200">
+                                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-sky-500/15 text-sky-300">
+                                                            <Calendar className="h-4 w-4" />
+                                                        </span>
+                                                        <div>
+                                                            <p className="text-[0.65rem] uppercase tracking-[0.18em] text-sky-200/80">
+                                                                Schedule
+                                                            </p>
+                                                            {stats.activities && (
+                                                                <p className="text-xs font-semibold text-sky-50">
+                                                                    {stats.activities}
+                                                                </p>
+                                                            )}
+                                                            {stats.platform && (
+                                                                <p className="text-[0.7rem] text-sky-100/90">
+                                                                    {stats.platform}
+                                                                </p>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                                                {stats.platform && (
+                                                    <span className="text-[0.7rem] text-teal-100/90">
+                                                        {stats.platform}
+                                                    </span>
+                                                )}
+                                                <a
+                                                    href="https://www.strava.com/clubs/1508184"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="inline-flex items-center gap-1 rounded-full bg-[#FC4C02] px-3 py-1 text-[0.7rem] font-semibold text-slate-950 shadow-sm shadow-black/40 transition hover:bg-[#ff6a28]"
+                                                >
+                                                    <span>Join on Strava</span>
+                                                </a>
+                                            </div>
                                         </div>
-                                        {stats.growth && (
-                                            <span className="rounded-full bg-slate-900/70 px-2 py-1 text-[0.7rem] text-teal-200">
-                                                {stats.growth}
-                                            </span>
-                                        )}
-                                    </div>
-                                )}
+                                    )}
 
                                 {subInitiative && (
                                     <div className="mt-3 flex flex-col gap-3 rounded-2xl border border-pink-500/60 bg-pink-950/20 p-3 sm:p-4">
