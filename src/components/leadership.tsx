@@ -64,16 +64,12 @@ export function LeadershipSection() {
         >
             <header className="mb-10 space-y-4">
                 <div className="flex items-center gap-3">
-                    <p
-                        className={`${playfair.className} text-xs font-semibold uppercase tracking-[0.28em] text-gold`}
-                    >
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
                         {leadership.humanSideLabel}
                     </p>
-                    <div className="h-px flex-1 bg-gradient-to-r from-gold/50 to-transparent" />
+                    <div className="h-px flex-1 bg-gradient-to-r from-amber-300/60 to-transparent" />
                 </div>
-                <h2
-                    className={`${playfair.className} text-4xl md:text-5xl font-bold tracking-tight text-slate-100`}
-                >
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
                     {leadership.humanSideTitle ?? leadership.heading}
                 </h2>
                 <p className="text-sm text-slate-400 sm:text-base">
