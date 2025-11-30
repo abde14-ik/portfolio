@@ -58,7 +58,7 @@ export function Navbar() {
 
     return (
         <>
-            <div className="flex h-16 items-center justify-between px-4 sm:px-8">
+            <div className="flex h-16 items-center justify-between px-4 lg:px-6">
                 <div className="flex items-center gap-3">
                     <button
                         type="button"
@@ -90,7 +90,7 @@ export function Navbar() {
                     </div>
                 </div>
 
-                <nav className="hidden items-center gap-4 lg:gap-2 text-sm font-medium text-zinc-400 md:flex">
+                <nav className="hidden items-center gap-4 lg:gap-6 text-sm font-medium text-zinc-400 md:flex">
                     {desktopLinks.map((item) => {
                         if (item.id === "community") return null;
 
@@ -153,11 +153,13 @@ export function Navbar() {
                             </Link>
                         )}
                     </div>
-                    <div className="hidden items-center gap-4 md:flex">
-                        <LanguageSwitcher />
+                    <div className="hidden items-center gap-3 md:flex">
+                        <div className="whitespace-nowrap">
+                            <LanguageSwitcher />
+                        </div>
                         <Link
                             href="#contact"
-                            className="rounded-full bg-zinc-100 px-5 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit flex-shrink-0"
+                            className="rounded-full bg-zinc-100 px-4 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit flex-shrink-0"
                         >
                             {navbar.contact ?? nav.contact}
                         </Link>
