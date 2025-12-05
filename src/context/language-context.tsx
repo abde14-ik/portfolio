@@ -12,6 +12,8 @@ type LanguageContextValue = {
     content: typeof en | typeof fr;
     toggleLanguage: () => void;
     setLanguage: (language: Language) => void;
+    isMatrixMode: boolean;
+    toggleMatrixMode: () => void;
 };
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
@@ -21,6 +23,7 @@ const STORAGE_KEY = "language-preference";
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [language, setLanguage] = useState<Language>("en");
     const [isHydrated, setIsHydrated] = useState(false);
+    const [isMatrixMode, setIsMatrixMode] = useState(false);
 
     useEffect(() => {
         // Run only on the client after initial mount
@@ -42,11 +45,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         setLanguage((prev) => (prev === "en" ? "fr" : "en"));
     };
 
+    const toggleMatrixMode = () => {
+        setIsMatrixMode((prev) => !prev);
+    };
+
     const value: LanguageContextValue = {
         language,
         content,
         toggleLanguage,
         setLanguage,
+        isMatrixMode,
+        toggleMatrixMode,
     };
 
     return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
