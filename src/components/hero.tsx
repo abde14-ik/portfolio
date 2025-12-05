@@ -64,7 +64,7 @@ export function HeroSection() {
                         </a>
                     </div>
 
-                    <p className="mt-3 flex items-center gap-2 text-xs text-zinc-400 sm:text-sm">
+                    <p className="mt-3 mb-[1cm] flex items-center gap-2 text-xs text-zinc-400 sm:text-sm">
                         <MapPin className="h-3 w-3 text-amber-400" aria-hidden="true" />
                         <span>{hero.locationMeta}</span>
                     </p>

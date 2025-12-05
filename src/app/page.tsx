@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero";
+import { CodeChallenge } from "@/components/code-challenge";
 import { AboutSection } from "@/components/about";
 import { LanguagesSection } from "@/components/languages";
 import { EducationSection } from "@/components/education";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <div className="space-y-12 sm:space-y-16">
       <HeroSection />
+      <CodeChallenge />
       <AboutSection />
       <EducationSection />
       <ExperienceSection />

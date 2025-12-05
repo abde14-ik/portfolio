@@ -548,6 +548,21 @@ export const fr = {
             },
         ],
     },
+    challenge: {
+        heading: "Défi d'ingénierie de la semaine",
+        subheading: "Recréez la logique derrière le Kubernetes HPA.",
+        problemTitle: "L'algorithme d'autoscaling",
+        description:
+            "Kubernetes ajuste le nombre de pods en fonction de l'utilisation. Implémentez une fonction qui calcule le nombre de réplicas souhaité à partir de l'utilisation CPU actuelle et de la cible.",
+        exampleInput: "current_pods=10, current_cpu=200ms, target_cpu=100ms",
+        exampleOutput: "Sortie : 20 (pods doublés)",
+        defaultCode:
+            "import math\n\ndef calculate_replicas(current_pods, current_metrics, target_metrics):\n    # Formule : current * (current_usage / target_usage)\n    # Astuce : n'oubliez pas d'arrondir vers le haut (ceil) !\n    return 0",
+        runButton: "Scaler le cluster",
+        outputLabel: "Sortie du scheduler",
+        successMessage: "Scaling réussi ! ⚖️ Cluster stabilisé.",
+        failureMessage: "Erreur de calcul. Les pods ont crashé.",
+    },
     contact: {
         heading: "Construisons l'automatisation de demain.",
         subheading:

@@ -23,7 +23,7 @@ export function AboutSection() {
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
+            <header className="mb-12 mt-[1cm] space-y-3">
                 <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
                     {about.heading}
                 </h2>
