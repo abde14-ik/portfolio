@@ -8,9 +8,10 @@ const sectionVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
-export function SkillsSection() {
+export function TheLexicon() {
     const { content } = useLanguage();
-    const categories = content.skills.categories;
+    const lexicon = (content as any).lexicon;
+    const categories = lexicon?.categories ?? [];
 
     return (
         <motion.section
@@ -23,25 +24,25 @@ export function SkillsSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
-                    {content.skills.heading}
+                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-parchment">
+                    {lexicon.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
-                    {content.skills.subheading}
+                <p className="text-sm text-parchment/70 sm:text-base max-w-2xl">
+                    {lexicon.subheading}
                 </p>
             </header>
 
-            <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {categories.map((category, index) => (
                     <motion.div
                         key={category.id}
-                        className="flex flex-col rounded-2xl border border-violet-500/25 bg-indigo-950/40 p-4 shadow-sm shadow-slate-950/40 transition-all hover:border-gold hover:shadow-lg hover:shadow-gold/30"
+                        className="flex flex-col rounded-2xl border border-espresso/35 bg-parchment/95 px-4 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.85)] transition-transform hover:-translate-y-1"
                         initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
                     >
-                        <h3 className="text-sm font-semibold text-slate-100">
+                        <h3 className="font-serif text-sm font-semibold tracking-[0.18em] text-espresso/80 uppercase">
                             {category.label}
                         </h3>
 
@@ -49,7 +50,7 @@ export function SkillsSection() {
                             {category.items.map((skill: string) => (
                                 <span
                                     key={skill}
-                                    className="inline-flex items-center rounded-full border border-violet-500/30 bg-indigo-900/40 px-3 py-1 text-xs font-medium font-mono text-violet-200 transition-colors hover:border-gold hover:text-gold"
+                                    className="inline-flex items-center rounded-full border border-espresso/25 bg-parchment/90 px-3 py-1 text-[0.75rem] font-medium text-espresso/80 font-mono shadow-sm shadow-black/20"
                                 >
                                     {skill}
                                 </span>

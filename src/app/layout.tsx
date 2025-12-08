@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { Cairo, Figtree, Fira_Code, Noto_Sans_Tifinagh } from "next/font/google";
+import {
+  Cairo,
+  Cinzel,
+  Cormorant_Garamond,
+  Fira_Code,
+  Noto_Sans_Tifinagh,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { LanguageProvider } from "@/context/language-context";
-import { MatrixModeRoot } from "@/components/matrix-mode-root";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const bodyFont = Cormorant_Garamond({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const headingFont = Cinzel({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const firaCode = Fira_Code({
@@ -31,9 +42,9 @@ export const notoTifinagh = Noto_Sans_Tifinagh({
 });
 
 export const metadata: Metadata = {
-  title: "Abdelilah IKBI | Cloud & DevOps Portfolio",
+  title: "Developer Portfolio Template",
   description:
-    "Cloud & DevOps engineering student at INPT seeking an end-of-study (PFE) internship. Focused on automation, cloud-native platforms, and DevOps culture.",
+    "A Dark Academia–inspired portfolio and reading club template where engineering, architecture, and philosophy can meet.",
 };
 
 export default function RootLayout({
@@ -44,23 +55,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${figtree.variable} ${firaCode.variable} ${cairo.variable} ${notoTifinagh.variable} antialiased`}
+        className={`${bodyFont.variable} ${headingFont.variable} ${firaCode.variable} ${cairo.variable} ${notoTifinagh.variable} antialiased`}
       >
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-            <MatrixModeRoot>
-              <div className="min-h-screen bg-black text-zinc-100 transition-colors duration-300 bg-[radial-gradient(circle_at_top,_rgba(30,64,175,0.32),transparent_65%)]">
-                <ScrollProgress />
-                <header className="sticky top-0 z-40 border-b border-zinc-800/70 bg-black/80 backdrop-blur-md">
-                  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <Navbar />
-                  </div>
-                </header>
-                <main className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
-                  {children}
-                </main>
-              </div>
-            </MatrixModeRoot>
+            <div className="min-h-screen bg-espresso text-parchment transition-colors duration-300 bg-[radial-gradient(circle_at_top,_rgba(197,160,89,0.18),transparent_65%)]">
+              <ScrollProgress />
+              <header className="sticky top-0 z-40 border-b border-leather/70 bg-leather/85 backdrop-blur-md">
+                <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                  <Navbar />
+                </div>
+              </header>
+              <main className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
+                {children}
+              </main>
+            </div>
           </ThemeProvider>
         </LanguageProvider>
       </body>

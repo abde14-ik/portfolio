@@ -9,14 +9,18 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["var(--font-figtree)", "system-ui", "sans-serif"],
+                sans: ["var(--font-body)", "system-ui", "sans-serif"],
+                serif: ["var(--font-heading)", "serif"],
                 mono: ["var(--font-fira-code)", "monospace"],
             },
             colors: {
-                midnight: "#0b0c15", // deep blue background
-                royal: "#7c3aed", // primary violet accent
-                royalDark: "#4f46e5", // deeper indigo accent
-                gold: "#fbbf24", // golden highlight (amber-400)
+                espresso: "#231709",
+                leather: "#3C2A20",
+                parchment: "#D6C6B0",
+                gold: "#C5A059",
+                midnight: "#231709",
+                royal: "#3C2A20",
+                royalDark: "#261A11",
             },
         },
     },

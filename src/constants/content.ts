@@ -162,7 +162,7 @@ export const content = {
                 role: "IT Manager",
                 company: "MAROC DATACENTER (MDC)",
                 image: "/placeholders/avatar-1.jpg",
-                text: "Abdelilah brings a rare mix of technical discipline and community leadership. His work on the Private Cloud project was outstanding.",
+                text: "[Your Name] brings a rare mix of technical discipline and community leadership. Their work on the Private Cloud project was outstanding.",
                 linkedinUrl: "#",
             },
             {

@@ -40,7 +40,7 @@ export function ChallengeModal({ isOpen, onClose }: ChallengeModalProps) {
     const [hasError, setHasError] = useState<boolean>(false);
 
     const [solvers, setSolvers] = useState<SolverEntry[]>([
-        { name: "Abdelilah IKBI", time: "Owner", isUser: false },
+        { name: "[Your Name]", time: "Owner", isUser: false },
     ]);
     const [showNameInput, setShowNameInput] = useState(false);
     const [userName, setUserName] = useState("");

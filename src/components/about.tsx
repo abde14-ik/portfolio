@@ -11,7 +11,7 @@ const sectionVariants = {
 
 export function AboutSection() {
     const { content } = useLanguage();
-    const about = content.about as any;
+    const about = (content as any).aboutClub ?? (content as any).about;
 
     return (
         <motion.section
@@ -33,7 +33,7 @@ export function AboutSection() {
             </header>
 
             <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-                <div className="rounded-2xl border border-violet-500/20 bg-indigo-950/30 p-5 shadow-sm shadow-slate-950/40 backdrop-blur">
+                <div className="rounded-2xl border border-leather/70 bg-espresso/80 p-5 shadow-sm shadow-black/60">
                     <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
                         {about.engineeringTitle}
                     </h3>
@@ -44,7 +44,7 @@ export function AboutSection() {
                     </div>
                 </div>
 
-                <div className="rounded-2xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/40">
+                <div className="rounded-2xl border border-leather/70 bg-espresso/80 p-5 shadow-sm shadow-black/60">
                     <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
                         {about.beyondCodeTitle}
                     </h3>

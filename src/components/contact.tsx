@@ -69,7 +69,7 @@ export function ContactSection() {
             <div className="grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
                 <form
                     ref={formRef}
-                    className="space-y-4 rounded-2xl border border-violet-500/25 bg-indigo-950/40 p-5 shadow-sm shadow-slate-950/40 backdrop-blur"
+                    className="space-y-4 rounded-2xl border border-leather/70 bg-espresso/80 p-5 shadow-sm shadow-black/60"
                     onSubmit={sendEmail}
                 >
                     <div className="grid gap-4 sm:grid-cols-2">
@@ -126,7 +126,7 @@ export function ContactSection() {
                     </button>
                 </form>
 
-                <div className="space-y-4 rounded-2xl border border-violet-500/25 bg-indigo-950/40 p-5 text-sm text-slate-200 shadow-sm shadow-slate-950/40 backdrop-blur">
+                <div className="space-y-4 rounded-2xl border border-leather/70 bg-espresso/80 p-5 text-sm text-slate-200 shadow-sm shadow-black/60">
                     <dl className="space-y-2 text-sm">
                         <div>
                             <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
@@ -155,38 +155,6 @@ export function ContactSection() {
                             <dd className="mt-1 text-slate-200">{content.contact.meta.availability}</dd>
                         </div>
                     </dl>
-
-                    <div className="mt-3 flex flex-wrap items-center gap-3">
-                        <Link
-                            href={profile.linkedin}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-royal hover:text-royal"
-                        >
-                            <Linkedin className="h-3.5 w-3.5" />
-                            <span>{content.contact.info.linkedinLabel}</span>
-                        </Link>
-                        <Link
-                            href={profile.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-gold hover:text-gold"
-                        >
-                            <Github className="h-3.5 w-3.5" />
-                            <span>{content.contact.info.githubLabel}</span>
-                        </Link>
-                        {profile.strava && (
-                            <Link
-                                href={profile.strava}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-gold hover:text-amber-200"
-                            >
-                                <Activity className="h-3.5 w-3.5" />
-                                <span>{content.contact.info.stravaLabel}</span>
-                            </Link>
-                        )}
-                    </div>
                 </div>
             </div>
         </motion.section>

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Code2 } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
 const sectionVariants = {
@@ -9,9 +8,20 @@ const sectionVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
-export function ProjectsSection() {
+export function CommunityLibrary() {
     const { content } = useLanguage();
-    const projects = content.projects.items;
+    const archives = (content as any).archives ?? {};
+    const library = (content as any).library ?? {};
+    const books = (library.items as any[]) ?? [];
+
+    const booksPerShelf = 4;
+    const shelves: any[][] = [];
+
+    for (let i = 0; i < books.length; i += booksPerShelf) {
+        shelves.push(books.slice(i, i + booksPerShelf));
+    }
+
+    const palette = ["bg-[#3A0F0F]", "bg-[#111827]", "bg-[#123524]", "bg-espresso"];
 
     return (
         <motion.section
@@ -23,78 +33,62 @@ export function ProjectsSection() {
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white">
-                    {content.projects.heading}
+            <header className="mb-8 space-y-2">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-parchment">
+                    {archives.heading}
                 </h2>
-                <p className="text-sm text-zinc-400 sm:text-base leading-relaxed">
-                    {content.projects.subheading}
+                <p className="text-sm text-parchment/70 sm:text-base leading-relaxed max-w-2xl">
+                    {archives.subheading}
                 </p>
             </header>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-                {projects.map((project) => {
-                    const codeHref = (project as any).githubUrl ?? project.codeUrl;
+            <div className="space-y-10">
+                {shelves.map((shelfBooks, shelfIndex) => (
+                    <div key={shelfIndex} className="relative pb-6">
+                        <div className="flex flex-wrap gap-6">
+                            {shelfBooks.map((book, index) => {
+                                const globalIndex = shelfIndex * booksPerShelf + index;
+                                const bgClass = palette[globalIndex % palette.length];
+                                const curator = (book as any).curator ?? "IKBI Abdelilah";
 
-                    return (
-                        <motion.article
-                            key={project.name}
-                            className="group flex h-full flex-col rounded-2xl bg-[#121212] p-4 shadow-md shadow-black/60 transition-transform transition-colors hover:-translate-y-1.5 hover:bg-zinc-900"
-                            whileHover={{ translateY: -4 }}
-                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                        >
-                            <div className="flex items-start justify-between gap-3">
-                                <div>
-                                    <h3 className="text-sm font-extrabold tracking-tight text-white sm:text-base">
-                                        {project.name}
-                                    </h3>
-                                    <p className="mt-2 text-xs text-zinc-400 sm:text-[0.9rem] leading-relaxed">
-                                        {project.desc}
-                                    </p>
-                                </div>
-                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900 text-zinc-200">
-                                    <Code2 className="h-4 w-4" />
-                                </span>
-                            </div>
+                                return (
+                                    <motion.article
+                                        key={book.title}
+                                        className="group relative flex"
+                                        initial={{ opacity: 0, y: 12 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.2 }}
+                                        transition={{ duration: 0.4, delay: globalIndex * 0.04, ease: "easeOut" }}
+                                    >
+                                        <div
+                                            className={`${bgClass} relative flex aspect-[2/3] w-24 sm:w-28 md:w-32 items-center justify-center rounded-md border border-espresso/70 px-3 text-center shadow-[0_18px_40px_rgba(0,0,0,0.85)] transition-transform duration-200 group-hover:-translate-y-2`}
+                                            style={{ transformStyle: "preserve-3d" }}
+                                        >
+                                            {/* Curator tag */}
+                                            <div className="absolute -top-3 right-3">
+                                                <div className="rounded-b-[0.25rem] bg-parchment px-2 py-0.5 text-[0.65rem] text-espresso shadow-sm shadow-black/40">
+                                                    <span className="block italic">Read by {curator}</span>
+                                                </div>
+                                            </div>
 
-                            <div className="mt-3 flex flex-wrap gap-2">
-                                {project.tech.map((tool) => (
-                                    <span
-                                        key={tool}
-                                        className="inline-flex items-center rounded-full border border-white/5 bg-black/40 px-3 py-1 text-[0.7rem] font-medium text-zinc-200 font-mono"
-                                    >
-                                        {tool}
-                                    </span>
-                                ))}
-                            </div>
+                                            <div className="flex flex-col items-center justify-center gap-2">
+                                                <h3 className="font-serif text-xs sm:text-sm md:text-base font-semibold leading-snug text-parchment">
+                                                    {book.title}
+                                                </h3>
+                                                <p className="text-[0.7rem] sm:text-xs text-parchment/80 italic font-sans">
+                                                    {book.author}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </motion.article>
+                                );
+                            })}
+                        </div>
 
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {codeHref && (
-                                    <a
-                                        href={codeHref}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-900 px-3 py-1.5 text-[0.7rem] font-medium text-zinc-100 hover:bg-zinc-800"
-                                    >
-                                        <Code2 className="h-3 w-3" />
-                                        <span>{content.common.viewCode}</span>
-                                    </a>
-                                )}
-                                {project.liveUrl && (
-                                    <a
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-100 px-3 py-1.5 text-[0.7rem] font-medium text-black shadow-sm hover:bg-white"
-                                    >
-                                        <ExternalLink className="h-3 w-3" />
-                                        <span>{content.common.liveDemo}</span>
-                                    </a>
-                                )}
-                            </div>
-                        </motion.article>
-                    );
-                })}
+                        {/* Shelf board */}
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 rounded-sm border-b-[12px] border-[#2A1D12] shadow-[0_14px_26px_rgba(0,0,0,0.9)]" />
+                    </div>
+                ))}
             </div>
         </motion.section>
     );

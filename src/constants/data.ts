@@ -32,18 +32,18 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-    name: "Abdelilah IKBI",
-    title: "Cloud, Infrastructure & DevOps Engineering Student",
-    goal: "Combining technical discipline with a human-centric approach to automation.",
-    location: "Morocco (Open to international/remote)",
-    email: "abdeikbi200@gmail.com",
-    phone: "+212 625125152",
-    linkedin: "https://www.linkedin.com/in/abdelilah-ikbi-103597283/",
-    github: "https://github.com/abde14-ik/",
-    arabicName: "اقبي عبد الاله",
-    tifinaghName: "ⵉⵇⴱⵉ ⵄⴰⴱⴷ ⵍⵉⵍⴰⵀ",
-    strava: "https://www.strava.com/athletes/142286490",
-    resumeUrl: "/resume.pdf",
+    name: "[Your Name]",
+    title: "[Your Title or Role]",
+    goal: "[One line about your focus, philosophy, or goals.]",
+    location: "Rabat, INPT Campus",
+    email: "contact@example.com",
+    phone: "+1 234 567 890",
+    linkedin: "https://linkedin.com/in/username",
+    github: "https://github.com/username",
+    arabicName: "[Your Name in Arabic]",
+    tifinaghName: "[Your Name in Tifinagh]",
+    strava: "https://www.strava.com/athletes/username",
+    resumeUrl: "[Link to Resume]",
 };
 
 export type ExperienceItem = {
@@ -132,12 +132,12 @@ export const languages = ["English", "French", "Arabic", "Tamazight"];
 
 export const about = {
     technical: [
-        "Cloud & DevOps engineering student at INPT specializing in ubiquitous and distributed systems, cloud, and IoT.",
+        "Cloud & DevOps engineer / student at [Your University/Role] specializing in distributed systems, cloud, and automation.",
         "Passionate about automation, infrastructure as code, and building reliable cloud-native platforms.",
-        "Hands-on with VMware, Azure, AWS, Kubernetes, CI/CD pipelines, and observability tooling.",
+        "Comfortable with major cloud providers, container orchestration, CI/CD pipelines, and observability tooling.",
     ],
     beyondCode: [
-        "Founder of INPT Runners, bringing people together around discipline, consistency, and wellbeing.",
+        "Founder of a student community initiative focused on discipline, consistency, and wellbeing.",
         "Curious reader interested in technology, leadership, and personal growth.",
         "Enjoy building communities and initiatives where people can grow together beyond the classroom.",
     ],
@@ -178,5 +178,5 @@ export const volunteering: VolunteeringItem[] = [
 export const contact = {
     email: profile.email,
     location: profile.location,
-    availability: "Currently seeking an end-of-study (PFE) internship in Cloud & DevOps.",
+    availability: "[Your current availability or what you are looking for.]",
 };

@@ -2,12 +2,12 @@ import type { EnContent } from "./en";
 
 export const fr = {
     nav: {
-        home: "Accueil",
-        about: "À propos",
+        home: "Index",
+        about: "À propos du club",
         education: "Formation",
-        skills: "Compétences",
+        skills: "Le Lexique",
         experience: "Expérience",
-        projects: "Projets",
+        projects: "Ex Libris",
         leadership: "Leadership",
         contact: "Contact",
         githubAria: "Profil GitHub",
@@ -16,25 +16,17 @@ export const fr = {
     },
     navbar: {
         items: [
-            { id: "hero", label: "Accueil" },
-            { id: "about", label: "À propos" },
-            { id: "skills", label: "Compétences" },
-            { id: "experience", label: "Expérience" },
-            { id: "projects", label: "Projets" },
-            { id: "community", label: "Communauté" },
+            { id: "hero", label: "Index" },
+            { id: "inkwell", label: "The Inkwell" },
+            { id: "about", label: "À propos du club" },
+            { id: "projects", label: "Ex Libris" },
+            { id: "skills", label: "Le Lexique" },
         ],
-        about: "À Propos",
-        skills: "Compétences",
-        experience: "Expérience",
-        projects: "Projets",
-        community: "Communauté",
-        leadership: "Leadership",
-        languages: "Langues",
-        bookshelf: "Livres",
-        endorsements: "Avis",
-        guestbook: "Livre d'Or",
+        about: "À propos du club",
+        skills: "Le Lexique",
+        projects: "Ex Libris",
         contact: "Contact",
-        subtitle: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
+        subtitle: "LITERATUM • Les paroles s'envolent, les écrits restent.",
     },
     common: {
         present: "Présent",
@@ -44,24 +36,24 @@ export const fr = {
         readMore: "Lire la suite",
     },
     hero: {
-        avatar: "/ikbi.jpg",
-        badge: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
-        bio: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
-        statusDot: "Ouvert aux opportunités PFE",
-        location: "Basé au Maroc",
-        remote: "Ouvert à l'International & Remote",
-        locationMeta: "Basé au Maroc • Ouvert au Télétravail & International",
-        metaLine: "Basé au Maroc • Ouvert au Télétravail & International",
+        avatar: "/philosophy.jpg",
+        badge: "LITERATUM • Les paroles s'envolent, les écrits restent.",
+        bio: "Un coin de bibliothèque pour celles et ceux qui aiment les textes exigeants et les conversations qui prennent leur temps.",
+        statusDot: "Séance de lecture en cours",
+        location: "[Ville, Pays]",
+        remote: "Ouvert à l'international & au remote",
+        locationMeta: "[Ville, Pays] • Ouvert à l'international & au remote",
+        metaLine: "[Ville, Pays] • Ouvert à l'international & au remote",
         ctaViewProjects: "Voir les Projets",
         ctaDownloadResume: "Télécharger le CV",
-        resumeUrl: "/resume-fr.pdf",
-        openToOpportunities: "Ouvert aux opportunités internationales et au télétravail",
-        engineeringMeetsHumanity: "Quand l'ingénierie rencontre l'humain",
-        snapshotTitle: "Instantané",
-        snapshotFocusLabel: "Focus",
-        snapshotFocusValue: "Cloud · CI/CD · IaC",
-        snapshotStacksLabel: "Stacks",
-        snapshotStacksValue: "Azure · AWS · VMware",
+        resumeUrl: "[Link to Resume]",
+        openToOpportunities: "Ouvert aux collaborations réfléchies et aux cercles de lecture",
+        engineeringMeetsHumanity: "Les paroles s'envolent, les écrits restent.",
+        snapshotTitle: "Folio",
+        snapshotFocusLabel: "Étagère actuelle",
+        snapshotFocusValue: "Classiques · Philosophie · Essais",
+        snapshotStacksLabel: "Thèmes",
+        snapshotStacksValue: "Psychologie · Traumatisme · Société",
         snapshotSoftSkillsLabel: "Soft skills",
         snapshotSoftSkillsValue: "Leadership · Communauté",
         statusTitle: "En direct",
@@ -71,13 +63,14 @@ export const fr = {
         statusBookValue: "The Myth of Normal",
         statusBookAuthor: "Dr. Gabor Maté",
         statusBookSubtitle: "Trauma, Illness & Healing in a Toxic Culture",
-        statusRunLabel: "Distance totale",
-        statusRunValue: "853,3 km",
-        statusRunSubtitle: "Marathon PB: 3h 39m · 5K: 18:59",
-        statusFocusLabel: "Focus Actuel",
-        statusFocusValue: "Ingénierie Cloud-Native",
+        statusRunLabel: "Rythme",
+        statusRunValue: "Rencontres hebdomadaires",
+        statusRunSubtitle: "Lecture lente, discussions longues.",
+        statusFocusLabel: "Focus actuel",
+        statusFocusValue: "Littérature & salles silencieuses",
         statusReadingLabel: "Lecture",
         statusTrainingLabel: "Entraînement",
+        establishedLine: "Fondé en MMXXIV à l'Institut National des Postes et Télécommunications.",
         status: {
             focusSub: "Infrastructure as Code & automatisation",
             professionalLabel: "Focus professionnel",
@@ -96,385 +89,142 @@ export const fr = {
     about: {
         heading: "À Propos",
         subheading:
-            "Un esprit d'ingénieur fondé sur l'automatisation et la fiabilité, avec un côté humain façonné par la course à pied, la communauté et la curiosité.",
+            "Un espace pour la lecture lente, les marges annotées et les discussions tranquilles autour des livres.",
         bio:
-            "Un esprit d'ingénieur fondé sur l'automatisation et la fiabilité, avec un côté humain façonné par la course à pied, la communauté et la curiosité.",
-        engineeringTitle: "Profil Ingénieur",
-        profileTitle: "Profil Ingénieur",
+            "Un coin de bibliothèque pour celles et ceux qui aiment les textes exigeants et les conversations qui prennent leur temps.",
+        engineeringTitle: "Profil du lecteur",
+        profileTitle: "Profil du lecteur",
         profileItems: [
-            "Élève ingénieur Cloud & DevOps à l'INPT spécialisé dans les systèmes ubiquitaires et distribués, le cloud et l'IoT.",
-            "Passionné par l'automatisation, l'Infrastructure as Code (IaC) et la construction de plateformes cloud-native fiables.",
-            "Pratique concrète sur VMware, Azure, AWS, Kubernetes, pipelines CI/CD et outils d'observabilité.",
+            "Ouvert aux profils curieux, qu'ils viennent de l'ingénierie, du design ou des humanités.",
         ],
-        beyondCodeTitle: "Au-delà du Code",
-        beyondTitle: "Au-delà du Code",
+        beyondCodeTitle: "Au-delà du CV",
+        beyondTitle: "Au-delà du CV",
         beyondItems: [
-            "Fondateur de INPT Runners, rassemblant les gens autour de la discipline, de la régularité et du bien-être.",
-            "Lecteur curieux intéressé par la technologie, le leadership et le développement personnel.",
-            "J'aime bâtir des communautés et des initiatives où les gens peuvent grandir ensemble au-delà des cours.",
+            "Ici, on lit pour comprendre un peu mieux le monde, pas pour remplir une checklist.",
         ],
         languagesTitle: "Langues",
         languagesSubtitle: "Communication multilingue",
         languagesList: ["Anglais", "Français", "Arabe", "Tamazight"],
     },
-    skills: {
-        heading: "Matrice de compétences",
+    aboutClub: {
+        heading: "À propos du club",
         subheading:
-            "Un ensemble d'outils dédié au déploiement de plateformes cloud fiables et observables, et de pipelines CI/CD.",
+            "LITERATUM a été fondé dans l'enceinte de l'INPT pour offrir un sanctuaire de pensée au milieu du bruit technologique. Nous sommes un collectif d'ingénieurs et de penseurs dévoués à l'écrit.",
+        engineeringTitle: "Ce qu'est le club",
+        profileTitle: "Ce qu'est le club",
+        profileItems: [
+            "Un petit cercle de lecture pour celles et ceux qui aiment les marges annotées, les textes longs et les conversations qui se construisent sur plusieurs semaines.",
+            "Nous lisons philosophie, fiction et essais avec la curiosité de l'ingénieur et la patience de l'humaniste.",
+            "Chaque séance associe un texte principal à un prompt simple, en laissant de la place au silence, aux annotations et aux retours partagés.",
+        ],
+        beyondCodeTitle: "Atmosphère & rituels",
+        beyondTitle: "Atmosphère & rituels",
+        beyondItems: [
+            "Lumière chaude plutôt qu'écrans dès que possible.",
+            "Notes manuscrites, extraits imprimés et musique de fond discrète.",
+            "Une préférence pour la bienveillance, la lenteur et l'idée que chacun vient ici pour apprendre.",
+        ],
+    },
+    lexicon: {
+        heading: "Le Lexique",
+        subheading: "Genres, traditions et thèmes vers lesquels nous revenons souvent dans nos lectures.",
         categories: [
             {
-                id: "cloudVirtualization",
-                label: "Cloud & virtualisation",
-                items: ["AWS", "Azure", "VMware vSphere", "OpenStack", "TrueNAS"],
+                id: "philosophy",
+                label: "Philosophie",
+                items: ["Existentialisme", "Stoïcisme", "Phénoménologie", "Éthique"],
             },
             {
-                id: "devOpsCiCd",
-                label: "DevOps & CI/CD",
-                items: ["Jenkins", "GitHub Actions", "GitLab CI", "Docker Compose", "Azure DevOps"],
+                id: "fiction",
+                label: "Fiction",
+                items: ["Classiques russes", "Modernisme", "Réalisme magique", "Nouvelle"],
             },
             {
-                id: "containerization",
-                label: "Conteneurisation",
-                items: ["Docker", "Kubernetes"],
+                id: "poetry",
+                label: "Poésie",
+                items: ["Romantisme", "Symbolisme", "Vers libre moderne"],
             },
             {
-                id: "iac",
-                label: "Infrastructure as Code (IaC)",
-                items: ["Terraform", "Ansible", "Bicep"],
+                id: "nonFiction",
+                label: "Non‑fiction",
+                items: ["Mémoire", "Essai", "Histoire intellectuelle"],
             },
             {
-                id: "monitoringSecurity",
-                label: "Monitoring & Sécurité",
-                items: [
-                    "Grafana",
-                    "Prometheus",
-                    "Application Insights",
-                    "Wazuh",
-                    "PRTG",
-                    "SonarQube",
-                    "Trivy",
-                ],
-            },
-            {
-                id: "databases",
-                label: "Bases de données",
-                items: ["MongoDB", "Chroma (Vector DB)", "MongoDB Atlas"],
-            },
-            {
-                id: "osNetworking",
-                label: "Systèmes & Réseaux",
-                items: ["Linux", "Windows Server", "DNS", "VLAN", "vSwitch"],
-            },
-            {
-                id: "programming",
-                label: "Programmation",
-                items: ["Python", "JavaScript", "Java", "FastAPI", "Streamlit", "LangChain"],
-            },
-            {
-                id: "architecture",
-                label: "Architecture",
-                items: ["Microservices", "Cloud-Native Design", "Backup & Recovery (Veeam)"],
+                id: "themes",
+                label: "Thèmes",
+                items: ["Aliénation", "Foi & doute", "Ville comme personnage", "Mémoire"],
             },
         ],
     },
     education: {
-        heading: "Parcours académique",
-        subheading: "Le parcours qui a façonné mes bases en ingénierie.",
-        items: [
-            {
-                institution: "Institut National des Postes et Télécommunications (INPT)",
-                degree: "Ingénierie des systèmes ubiquistes et distribués - Cloud et IoT",
-                period: "09/2023 - Présent",
-                location: "Rabat",
-            },
-            {
-                institution: "Classes préparatoires Lydex",
-                degree: "Classes préparatoires TSI (Technologie et Sciences Industrielles)",
-                period: "09/2021 - 2023",
-                location: "Benguerir",
-            },
-            {
-                institution: "Lycée Tassaout",
-                degree: "Baccalauréat, Sciences et Technologies Électriques (STE)",
-                period: "09/2020 - 2021",
-                location: "El Kelaa Des Sraghnas",
-            },
-        ],
+        heading: "",
+        subheading: "",
+        items: [],
     },
     experience: {
-        heading: "Expérience",
-        subheading:
-            "Des rôles concrets appliquant cloud, automatisation et données dans des environnements réels.",
-        items: [
-            {
-                role: "Stagiaire Infrastructure Cloud",
-                company: "MAROC DATACENTER (MDC)",
-                period: "06/2025 - 08/2025",
-                location: "Témara, Maroc",
-                tasks: [
-                    "Conception d'un cloud privé automatisé sur VMware vSphere.",
-                    "Mise en place de TrueNAS, automatisation Ansible, sécurité Wazuh et sauvegarde Veeam.",
-                ],
-            },
-            {
-                role: "Collecteur de Données",
-                company: "Haut Commissariat au Plan du Maroc",
-                period: "08/2024 - 09/2024",
-                tasks: [
-                    "Collecte de données pour la campagne d'été du HCP.",
-                    "Développement de la résilience et du souci du détail lors des opérations sur le terrain.",
-                ],
-            },
-        ],
+        heading: "",
+        subheading: "",
+        items: [],
     },
-    projects: {
-        heading: "Projets phares",
+    archives: {
+        heading: "Ex Libris",
         subheading:
-            "Sélection de travaux illustrant la pensée cloud-native, les pratiques DevOps et l'infrastructure as code.",
-        viewProjectLabel: "Voir le projet",
-        viewCodeLabel: "Voir le code",
-        liveDemoLabel: "Démo en ligne",
-        viewCode: "Voir le Code",
-        liveDemo: "Démo Live",
-        techStack: "Stack Technique",
+            "Une curation d'œuvres explorées par la Syntax Society.",
         items: [
             {
-                name: "BoardGameListing - CI/CD & K8s",
-                subtitle: "Pipeline CI/CD Spring & Kubernetes",
-                desc: "Pipeline CI/CD complet pour une application Spring Boot avec Jenkins, Kubernetes sur AWS EC2, SonarQube et Trivy.",
-                githubUrl: "https://github.com/abde14-ik/BoardGameListing---CI-CD-K8s",
-                tech: ["Jenkins", "Kubernetes", "AWS EC2", "SonarQube", "Trivy"],
-                codeUrl: "https://github.com/abde14-ik/BoardGameListing---CI-CD-K8s",
-                liveUrl: undefined,
-                image: undefined,
+                title: "L'Étranger",
+                author: "Albert Camus",
+                year: "1942",
+                genre: "Roman existentialiste",
+                dateDiscussed: "Semaine 01",
+                seriesLabel: "Existentialisme",
+                notes:
+                    "Nous avons suivi la manière dont une lumière ordinaire devient une force oppressante, miroir de la distance émotionnelle et morale de Meursault.",
             },
             {
-                name: "Local RAG Microservices",
-                subtitle: "Microservices RAG avec LLM locaux",
-                desc: "Système de questions-réponses sur documents en mode hors-ligne utilisant des LLM locaux avec Python, FastAPI, LangChain, Ollama, Docker et Terraform.",
-                githubUrl: "https://github.com/abde14-ik/Local-RAG-Microservices",
-                tech: ["Python", "FastAPI", "LangChain", "Ollama", "Docker", "Terraform"],
-                codeUrl: "https://github.com/abde14-ik/Local-RAG-Microservices",
-                liveUrl: undefined,
-                image: undefined,
+                title: "Crime et Châtiment",
+                author: "Fiodor Dostoïevski",
+                year: "1866",
+                genre: "Roman psychologique russe",
+                dateDiscussed: "Semaine 02",
+                seriesLabel: "Culpabilité & Rédemption",
+                notes:
+                    "La discussion s'est concentrée sur le tiraillement de Raskolnikov entre théorie et conscience, et sur la ville de Saint-Pétersbourg comme paysage fiévreux.",
             },
             {
-                name: "Azure Pet Store",
-                subtitle: "Application cloud-native de référence sur Azure",
-                desc: "Architecture microservices N-tiers sur Azure avec Azure DevOps, AKS, Bicep et Azure Functions.",
-                githubUrl: "https://github.com/abde14-ik/Azure-Pet-Store",
-                tech: ["Azure DevOps", "AKS", "Bicep", "Azure Functions"],
-                codeUrl: "https://github.com/abde14-ik/Azure-Pet-Store",
-                liveUrl: undefined,
-                image: undefined,
+                title: "Pensées pour moi-même",
+                author: "Marc Aurèle",
+                year: "IIᵉ siècle apr. J.-C.",
+                genre: "Philosophie stoïcienne",
+                dateDiscussed: "Semaine 03",
+                seriesLabel: "Stoïcisme",
+                notes:
+                    "Nous avons relié les pratiques stoïciennes (visualisation négative, journal, devoir) à la vie d'ingénieur moderne et aux périodes d'astreinte.",
             },
             {
-                name: "Readers Haven",
-                subtitle: "Plateforme microservices & observabilité",
-                desc: "Application microservices full-stack construite en équipe avec React et Node.js, orchestrée par Kubernetes avec une stack de monitoring complète (Prometheus/Grafana) et un pattern d'API Gateway sécurisé.",
-                githubUrl: "https://github.com/Aymane27-Rio/readers-haven",
-                tech: ["React", "Node.js", "Kubernetes", "Prometheus", "Grafana", "MongoDB"],
-                codeUrl: "https://github.com/Aymane27-Rio/readers-haven",
-                liveUrl: undefined,
-                image: undefined,
-            },
-            {
-                name: "3-Tier DevOps CI/CD Pipeline",
-                subtitle: "Déploiement cloud automatisé et sécurisé",
-                desc: "Pipeline Jenkins robuste pour une application 3-tiers, intégrant des outils DevSecOps (SonarQube, Trivy) et automatisant le déploiement sur AWS EKS via Helm et une infrastructure dynamique.",
-                githubUrl: "https://github.com/abde14-ik/3-Tier-DevOps-CI-CD-Pipeline",
-                tech: ["Jenkins", "AWS EKS", "Docker", "SonarQube", "Trivy", "Helm"],
-                codeUrl: "https://github.com/abde14-ik/3-Tier-DevOps-CI-CD-Pipeline",
-                liveUrl: undefined,
-                image: undefined,
+                title: "L'Art d'aimer",
+                author: "Erich Fromm",
+                year: "1956",
+                genre: "Philosophie psychanalytique",
+                dateDiscussed: "Semaine 04",
+                seriesLabel: "Éthique humaniste",
+                notes:
+                    "Conversation autour de l'amour comme art discipliné, et de ce que cela implique pour le soin apporté à la collaboration et au travail d'équipe.",
             },
         ],
     },
     leadership: {
-        heading: "Au-delà du Code",
-        subheading:
-            "Mener des initiatives, bâtir des communautés et cultiver la résilience en dehors du terminal.",
-        humanSideLabel: "COMMUNAUTÉ & IMPACT",
-        humanSideTitle: "Au-delà du Code",
-        humanSide: "COMMUNAUTÉ & IMPACT",
-        initiatives:
-            "Mener des initiatives, bâtir des communautés et cultiver la résilience en dehors du terminal.",
-        items: [
-            {
-                role: "Fondateur",
-                org: "INPT Runners (Club de Course Étudiant)",
-                logo: "/images/logo-runners.png",
-                description:
-                    "A fondé la première communauté étudiante de course à pied. Organisation de courses hebdomadaires pour promouvoir la résilience mentale et la discipline — des valeurs que j'apporte aux équipes d'ingénierie.",
-                details: {
-                    headline:
-                        "INPT Runners est le club officiel de course de l'INPT, unissant les étudiants par la passion du mouvement et de l'endurance.",
-                    description:
-                        "Que vous sprintiez, trottiniez ou débutiez à peine — nous courons ensemble, nous progressons ensemble.",
-                    featureImage: "/images/events/runners-main.jpg",
-                    stats: {
-                        members: "94+ Membres",
-                        weeklyDistance: "450+ km",
-                        activities: "Sorties Hebdo",
-                        platform: "Sur Strava",
-                    },
-                    subInitiative: {
-                        title: "She Runs INPT",
-                        description:
-                            "Un espace dédié pour encourager les femmes dans le sport et renforcer la confiance.",
-                        logo: "/images/sheruns-logo.png",
-                    },
-                    events: [
-                        {
-                            title: "Rabat Run",
-                            images: [
-                                "/images/events/rabat-run-1.jpg",
-                                "/images/events/rabat-run-2.jpg",
-                            ],
-                            desc: "Une célébration annuelle gratuite du sport et du patrimoine (série 'TheCityRun'), explorant les sites emblématiques de Rabat.",
-                        },
-                        {
-                            title: "Marathon International de Rabat",
-                            images: [
-                                "/images/events/marathon-1.JPG",
-                                "/images/events/marathon-2.JPG",
-                                "/images/events/marathon-3.jpg",
-                                "/images/events/marathon-4.JPG",
-                                "/images/events/marathon-5.jpg",
-                            ],
-                            desc: "Événement majeur sous Haut Patronage Royal, réunissant l'élite athlétique sur un parcours traversant les monuments historiques.",
-                        },
-                        {
-                            title: "Marathon de l'ICESCO",
-                            images: [
-                                "/images/events/icesco-1.jpg",
-                                "/images/events/icesco-2.jpg",
-                                "/images/events/icesco-3.jpg",
-                            ],
-                            desc: "Promouvoir la cohésion sociale et le bien-être. Une course inclusive de 9km organisée par l'ICESCO pour tous les niveaux.",
-                        },
-                    ],
-                },
-            },
-            {
-                role: "Responsable Cellule DevOps",
-                org: "Club CIT (Club Informatique & Télécom)",
-                logo: "/images/cit-logo-v2.png",
-                description:
-                    "Animation d'ateliers sur le Cloud & CI/CD. Mentorat de pairs sur la conteneurisation et les meilleures pratiques d'automatisation.",
-                details: {
-                    headline:
-                        "Créé en 1998, le CIT est le club historique de l'INPT. En tant que Responsable Cellule DevOps, j'ai structuré un cursus technique pour initier mes pairs aux opérations modernes.",
-                    description:
-                        "J'ai organisé des sessions hebdomadaires pour combler le fossé entre théorie académique et réalité industrielle, en se concentrant sur la transition vers le Cloud-Native.",
-                    logo: "/images/cit-logo-v2.png",
-                    featureImage: "/images/cit-main.JPG",
-                    stats: {
-                        role: "Resp. Cellule DevOps",
-                        since: "Depuis 1998",
-                        impact: "7+ Sessions",
-                        members: "25–35 étudiants par séance en salle",
-                    },
-                    resource: {
-                        label: "Accéder aux Cours",
-                        url: "https://github.com/CitInpt/CIT-Courses/tree/main/24-25/DevOpsCell",
-                        description: "Accédez à tous mes supports de présentation sur GitHub.",
-                    },
-                    events: [
-                        {
-                            title: "Module 1 : Culture & Fondamentaux",
-                            images: [
-                                "/images/cit-11.jpg",
-                                "/images/cit12.jpg",
-                                "/images/cit13.jpg",
-                            ],
-                            desc: "Introduction à la philosophie DevOps (CALMS), évolution du SDLC et fonctionnement interne des OS.",
-                        },
-                        {
-                            title: "Module 2 : La Stack Infrastructure",
-                            images: [
-                                "/images/cit-21.jpg",
-                                "/images/cit-22.jpg",
-                                "/images/cit-23.jpg",
-                            ],
-                            desc: "Plongée dans l'administration Linux, les protocoles Réseaux (OSI/TCP/IP) et la Virtualisation.",
-                        },
-                        {
-                            title: "Module 3 : Conteneurisation",
-                            images: [
-                                "/images/cit-31.jpg",
-                                "/images/cit-32.jpg",
-                            ],
-                            desc: "Ateliers pratiques passant des VMs aux Conteneurs, maîtrise de l'architecture Docker et création d'images.",
-                        },
-                    ],
-                },
-            },
-            {
-                role: "Vice-Président",
-                org: "MSC (Club Math & Science)",
-                logo: "/images/msc.png",
-                description:
-                    "Gestion des opérations du club et promotion de la curiosité scientifique à travers des événements et séminaires.",
-                details: {
-                    headline:
-                        "Le MSC rassemble les passionnés de mathématiques et de sciences à l'INPT pour cultiver l'esprit critique à travers des événements et conférences.",
-                    description:
-                        "En tant que Vice-Président, j'ai géré les opérations et dirigé l'identité visuelle du club, reliant les mathématiques abstraites à l'engagement communautaire.",
-                    featureImage: "/images/msc-main.jpg",
-                    logo: "/images/msc.png",
-                    stats: {
-                        role: "Vice-Président",
-                        focus: "Maths & Design",
-                        impact: "Collab. WCA",
-                        members: "Communauté Active",
-                    },
-                    resource: {
-                        label: "Suivre MSC sur Instagram",
-                        url: "https://www.instagram.com/msc_inpt/",
-                        description: "Découvrez nos moments forts et notre galerie visuelle.",
-                    },
-                    events: [
-                        {
-                            title: "Direction Artistique & Design",
-                            images: [
-                                "/images/events/design-1.jpg",
-                                "/images/events/design-2.jpg",
-                                "/images/events/design-3.jpg",
-                                "/images/events/design-4.jpg",
-                                "/images/events/design-5.jpg",
-                            ],
-                            desc: "Conception de l'identité visuelle du club et création des campagnes graphiques pour les réseaux sociaux.",
-                        },
-                        {
-                            title: "INPT Rubik's Cube Open",
-                            images: [
-                                "/images/events/rubik-1.jpg",
-                                "/images/events/rubik-2.jpg",
-                                "/images/events/rubik-3.jpg",
-                                "/images/events/rubik-4.jpg",
-                                "/images/events/rubik-5.jpg",
-                            ],
-                            desc: "Organisé durant les Olympiades INPT en collaboration officielle avec la World Cube Association (WCA).",
-                        },
-                        {
-                            title: "Math Trivia Night : Édition Ramadan",
-                            images: [
-                                "/images/events/trivia-1.jpg",
-                                "/images/events/trivia-2.jpg",
-                                "/images/events/trivia-3.jpg",
-                            ],
-                            desc: "Une soirée spirituelle et intellectuelle rassemblant les étudiants autour de la résolution de problèmes mathématiques en groupe.",
-                        },
-                    ],
-                },
-            },
-        ],
+        heading: "",
+        subheading: "",
+        humanSideLabel: "",
+        humanSideTitle: "",
+        humanSide: "",
+        initiatives: "",
+        items: [],
     },
     library: {
         heading: "Fondations intellectuelles",
-        tagline:
-            "L'ingénierie construit des systèmes. La philosophie aide à comprendre qui les utilise.",
+        tagline: "Les paroles s'envolent, les écrits restent.",
         items: [
             {
                 title: "The Art of Loving",
@@ -485,6 +235,7 @@ export const fr = {
                     "Fromm soutient que l'amour n'est pas un vague sentiment, mais un art qui exige discipline, concentration et patience pour être maîtrisé.",
                 connection:
                     "Appliquer cette même discipline active et ce soin aux dynamiques d'équipe et à la responsabilité du code.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "Man for Himself",
@@ -495,6 +246,7 @@ export const fr = {
                     "Une enquête sur la psychologie de l'éthique, défendant que notre plus grande vertu est d'être fidèles à notre propre nature (productivité).",
                 connection:
                     "Ancrer les décisions d'ingénierie dans l'intégrité plutôt que dans les seuls indicateurs.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "The Art of Being",
@@ -505,6 +257,7 @@ export const fr = {
                     "Un guide pour fonctionner pleinement dans un monde distrait grâce à la pratique de la pleine conscience et au dépassement des illusions.",
                 connection:
                     "Apporter un état de Flow et une concentration profonde à la conception d'architectures complexes et au débogage.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "Ethics: A Very Short Introduction",
@@ -515,6 +268,7 @@ export const fr = {
                     "Blackburn explore les grands climats éthiques de notre époque (Kant, utilitarisme) et la manière dont nous justifions nos valeurs.",
                 connection:
                     "Utiliser ces cadres pour arbitrer les compromis éthiques en IA, vie privée et automatisation.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "Philosophy: The Basics",
@@ -525,6 +279,7 @@ export const fr = {
                     "Une introduction claire aux grandes questions de la réalité, de la science et de l'esprit, invitant à un scepticisme rigoureux.",
                 connection:
                     "Aiguiser les capacités d'analyse de cause racine nécessaires pour diagnostiquer les pannes distribuées.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "Le Mythe de la Normalité",
@@ -535,6 +290,7 @@ export const fr = {
                     "Maté décortique la façon dont la société moderne génère la maladie, en reliant les traumatismes individuels aux pressions systémiques plus larges.",
                 connection:
                     "Comprendre comment le stress systémique affecte la fiabilité — autant dans la biologie humaine que dans les clusters cloud.",
+                curator: "IKBI Abdelilah",
             },
             {
                 title: "L'Homme Irrationnel",
@@ -545,28 +301,55 @@ export const fr = {
                     "Un exposé de référence sur la philosophie existentialiste, qui interroge la quête de sens à l'ère mécaniste.",
                 connection:
                     "Naviguer dans l'ambiguïté et le « facteur humain » au sein de systèmes logiciels déterministes.",
+                curator: "IKBI Abdelilah",
+            },
+            {
+                title: "L'Étranger",
+                author: "Albert Camus",
+                image: undefined,
+                theme: "Roman existentialiste",
+                synopsis:
+                    "Le récit de Meursault, un homme apparemment indifférent dont le crime révèle l'absurdité radicale du monde.",
+                connection:
+                    "Texte central pour discuter de l'aliénation, du soleil comme force hostile et du procès comme théâtre moral.",
+                curator: "IKBI Abdelilah",
+            },
+            {
+                title: "Crime et Châtiment",
+                author: "Fiodor Dostoïevski",
+                image: undefined,
+                theme: "Roman psychologique russe",
+                synopsis:
+                    "L'itinéraire tourmenté de Raskolnikov entre théorie froide et conscience brûlante, dans une Saint-Pétersbourg fiévreuse.",
+                connection:
+                    "Support idéal pour explorer la culpabilité, la rédemption et la ville comme personnage.",
+                curator: "IKBI Abdelilah",
+            },
+            {
+                title: "Pensées pour moi-même",
+                author: "Marc Aurèle",
+                image: undefined,
+                theme: "Philosophie stoïcienne",
+                synopsis:
+                    "Les notes intimes d'un empereur romain qui tente de vivre avec rectitude dans un monde changeant.",
+                connection:
+                    "Texte de chevet pour les séances consacrées à la discipline intérieure et aux rituels quotidiens.",
+                curator: "IKBI Abdelilah",
             },
         ],
     },
-    challenge: {
-        heading: "Challenge Hebdomadaire",
-        subheading: "Aidez-moi à optimiser mon prochain marathon.",
-        problemTitle: "L'Optimiseur de Negative Split",
-        description:
-            "Fun Fact : J'ai couru 853,3 km cette année. Pour battre un record, j'utilise le 'Negative Split' (courir la 2ème moitié plus vite que la 1ère). Écrivez une fonction qui calcule les temps de passage où chaque km est 1% plus rapide que le précédent.",
-        exampleInput: "distance=10km, temps_cible=60min",
-        exampleOutput: "Sortie: [6.30, 6.24, 6.17, ...]",
-        defaultCode:
-            "def calculate_pacing(distance, target_time):\n    # Challenge : Générer une liste de temps (en minutes)\n    # où chaque km est 1% plus rapide que le précédent.\n    # La somme totale doit être égale au temps cible.\n    return []",
-        runButton: "Simuler la Course",
-        outputLabel: "Télémétrie Course",
-        successMessage: "Nouveau Record ! 🏃‍♂️💨 Logique validée.",
-        failureMessage: "Erreur de calcul. Abandon.",
+    inkwell: {
+        heading: "The Inkwell",
+        subheading: "Prompt d'écriture hebdomadaire",
+        prompt:
+            "Dans <em>L'Étranger</em>, Camus utilise le soleil comme une force hostile. Rédigez un paragraphe décrivant un décor qui reflète le conflit intérieur d'un personnage.",
+        placeholder: "Commencez votre réflexion ici...",
+        note: "Cet espace est purement local – rien de ce que vous écrivez n'est envoyé. Considérez-le comme une marge personnelle.",
     },
     contact: {
-        heading: "Construisons l'automatisation de demain.",
+        heading: "Construisons quelque chose de durable.",
         subheading:
-            "Si vous recherchez un stagiaire PFE Cloud & DevOps qui se soucie de la fiabilité, de l'automatisation et des personnes, discutons-en.",
+            "Si vous recherchez quelqu'un qui se soucie de la fiabilité, de la qualité et des personnes, ce modèle est prêt à être adapté à votre parcours.",
         form: {
             nameLabel: "Nom",
             namePlaceholder: "Votre nom",
@@ -588,9 +371,8 @@ export const fr = {
             stravaLabel: "Strava",
         },
         meta: {
-            location: "Basé au Maroc",
-            availability:
-                "Actuellement à la recherche d'un stage de fin d'études (PFE) en Cloud & DevOps.",
+            location: "Rabat, Campus INPT",
+            availability: "[Votre disponibilité actuelle ou ce que vous recherchez.]",
         },
         status: {
             idle: "Envoyer le message",
@@ -610,43 +392,17 @@ export const fr = {
         },
     },
     endorsements: {
-        heading: "Communauté et recommandations",
-        subheading:
-            "Les retours de managers, de pairs et de membres de la communauté avec qui j'ai travaillé.",
-        roleAt: "chez",
-        items: [
-            {
-                name: "Soulaymane KACEM",
-                role: "Data & AI Engineer chez Oracle | Ingénieur Data Certifié AWS",
-                company: "Oracle",
-                image: "/soulaymane-kacem.jpg",
-                text: "Si vous avez besoin de courir un semi-marathon un mardi soir au hasard pendant vos vacances, c'est votre homme ! Si vous voulez mettre en place une infrastructure scalable, il peut le faire aussi !!",
-                linkedinUrl: "https://www.linkedin.com/in/kacemsoulaymane/",
-            },
-            {
-                name: "ELHABIB SBIHI",
-                role: "Administrateur Système | Ingénieur NMS chez Nokia",
-                company: "Nokia",
-                image: "/elhabib.png",
-                text: "Abdelilah a une capacité remarquable à s'adapter à de nouvelles personnes et à des environnements divers, et son dévouement au sport garde son esprit plus vif que la moyenne.",
-                linkedinUrl: "https://www.linkedin.com/in/elhabib-sbihi-972ab4276/",
-            },
-            {
-                name: "Mehdi Lahlou Mimi",
-                role: "Consultant IT chez Leyton",
-                company: "Leyton",
-                image: "/mehdi.jpeg",
-                text: "Abdelilah est l'une des personnes les plus fiables, dévouées et motivées que je connaisse. Toute équipe aurait de la chance d'avoir quelqu'un avec une telle éthique de travail.",
-                linkedinUrl: "https://www.linkedin.com/in/mehdi-lahlou-mimi-893b91245/",
-            },
-        ],
+        heading: "",
+        subheading: "",
+        roleAt: "",
+        items: [],
     },
     guestbook: {
-        heading: "Laissez une trace.",
-        subheading: "Retours, encouragements, ou juste un bonjour.",
+        heading: "",
+        subheading: "",
     },
     footer: {
-        owner: "Abdelilah IKBI",
+        owner: "[Your Name]",
         rights: "Tous droits réservés.",
         builtBy: "Conçu et Développé par",
     },
