@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { LanguageProvider } from "@/context/language-context";
+import { Fireflies } from "@/components/ui/fireflies";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -48,6 +49,7 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
             <div className="min-h-screen bg-black text-zinc-100 transition-colors duration-300 bg-[radial-gradient(circle_at_top,_rgba(30,64,175,0.32),transparent_65%)]">
+              <Fireflies />
               <ScrollProgress />
               <header className="sticky top-0 z-40 border-b border-zinc-800/70 bg-black/80 backdrop-blur-md">
                 <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
