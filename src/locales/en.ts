@@ -32,7 +32,7 @@ export const en = {
         endorsements: "Endorsements",
         guestbook: "Guestbook",
         contact: "Contact me",
-        subtitle: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
+        subtitle: "Cloud, DevOps & Platform Engineering · Backend Java",
     },
     common: {
         present: "Present",
@@ -43,16 +43,18 @@ export const en = {
     },
     hero: {
         avatar: "/ikbi.jpg",
-        badge: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
-        bio: "Engineering student at INPT specializing in Cloud, Infrastructure, and DevOps.",
-        statusDot: "Open to PFE Internship",
+        badge: "Cloud, DevOps & Platform Engineer",
+        bio: "INPT engineering graduate specializing in distributed systems and cloud. Recently completed a Backend Java internship with Oracle Cloud Infrastructure, with hands-on experience across Java services, Kubernetes, CI/CD, Terraform, and cloud platforms.",
+        statusDot: "Open to full-time opportunities",
         location: "Based in Morocco",
         remote: "Open to International & Remote",
-        locationMeta: "Based in Morocco • Open to International & Remote PFE Opportunities",
-        metaLine: "Based in Morocco • Open to International & Remote PFE Opportunities",
+        locationMeta: "Based in Morocco · Open to opportunities in Morocco and internationally",
+        metaLine: "Based in Morocco · Open to opportunities in Morocco and internationally",
         ctaViewProjects: "View Projects",
-        ctaDownloadResume: "Download Resume",
-        resumeUrl: "/resume.pdf",
+        ctaCloudResume: "Cloud & DevOps CV",
+        ctaBackendResume: "Backend Java CV",
+        cloudResumeUrl: "/resume.pdf",
+        backendResumeUrl: "/resume-backend.pdf",
         openToOpportunities: "Open to international & remote opportunities",
         engineeringMeetsHumanity: "Engineering meets humanity",
         snapshotTitle: "Snapshot",
@@ -94,20 +96,20 @@ export const en = {
     about: {
         heading: "About Me",
         subheading:
-            "An engineering mindset grounded in automation and reliability, with a human side shaped by running, community and curiosity.",
+            "Cloud and platform engineering grounded in automation and reliability, shaped by hands-on experience and a commitment to building useful systems with people.",
         engineeringTitle: "Engineering Profile",
         profileTitle: "Engineering Profile",
         profileItems: [
-            "Cloud & DevOps engineering student at INPT specializing in ubiquitous and distributed systems, cloud, and IoT.",
-            "Passionate about automation, Infrastructure as Code (IaC), and building reliable cloud-native platforms.",
-            "Hands-on with VMware, Azure, AWS, Kubernetes, CI/CD pipelines, and observability tooling.",
+            "INPT engineering graduate specializing in distributed systems and cloud, focused on Cloud, DevOps, and platform engineering.",
+            "Completed a Backend Java internship with Oracle Cloud Infrastructure's Oracle Cloud Subscriptions team in 2026.",
+            "Hands-on with Java services, OCI, AWS, Azure, VMware, Kubernetes, CI/CD, Terraform, Ansible, and observability.",
         ],
         beyondCodeTitle: "Beyond the Code",
         beyondTitle: "Beyond the Code",
         beyondItems: [
             "Founder of INPT Runners, bringing people together around discipline, consistency, and wellbeing.",
             "Curious reader interested in technology, leadership, and personal growth.",
-            "Enjoy building communities and initiatives where people can grow together beyond the classroom.",
+            "Enjoy building communities and initiatives where people can grow together beyond the workplace.",
         ],
         languagesTitle: "Languages",
         languagesSubtitle: "Multilingual communication",
@@ -121,7 +123,7 @@ export const en = {
             {
                 id: "cloudVirtualization",
                 label: "Cloud & Virtualization",
-                items: ["AWS", "Azure", "VMware vSphere", "OpenStack", "TrueNAS"],
+                items: ["Oracle Cloud Infrastructure (OCI)", "AWS", "Azure", "VMware vSphere", "OpenStack", "TrueNAS"],
             },
             {
                 id: "devOpsCiCd",
@@ -142,6 +144,7 @@ export const en = {
                 id: "monitoringSecurity",
                 label: "Monitoring & Security",
                 items: [
+                    "OCI Monitoring & MQL",
                     "Grafana",
                     "Prometheus",
                     "Application Insights",
@@ -164,7 +167,7 @@ export const en = {
             {
                 id: "programming",
                 label: "Programming",
-                items: ["Python", "JavaScript", "Java", "FastAPI", "Streamlit", "LangChain"],
+                items: ["Java", "Spring Boot", "Dropwizard", "Guice", "Hibernate", "SQL", "Python", "JavaScript", "FastAPI", "LangChain"],
             },
             {
                 id: "architecture",
@@ -180,7 +183,7 @@ export const en = {
             {
                 institution: "National Institute of Posts and Telecommunications (INPT)",
                 degree: "Engineering of Ubiquitous and Distributed Systems - Cloud and IoT",
-                period: "09/2023 - Present",
+                period: "09/2023 - 2026",
                 location: "Rabat",
             },
             {
@@ -200,16 +203,27 @@ export const en = {
     experience: {
         heading: "Experience",
         subheading:
-            "Hands-on roles applying cloud, automation and data skills in real environments.",
+            "Experience delivering cloud infrastructure and backend engineering work in production-minded environments.",
         items: [
+            {
+                role: "Backend Java Intern",
+                company: "Oracle Cloud Subscriptions (OCI)",
+                period: "03/2026 - 09/2026",
+                location: "Casablanca, Morocco",
+                tasks: [
+                    "Designed and implemented Mastering Auditor, a configuration-driven Java framework using Dropwizard, Guice, and Hibernate for asynchronous scheduled checks with per-audit fault isolation.",
+                    "Built a shared query builder for safe, parameterized SQL detectors, including stuck-state and missing-transition checks.",
+                    "Added dimensioned OCI Monitoring metrics and environment-aware MQL alarm policies managed with Terraform; validated deployments across Dev2 and Preprod with JUnit, Mockito, and H2.",
+                ],
+            },
             {
                 role: "Cloud Infrastructure Intern",
                 company: "MAROC DATACENTER (MDC)",
                 period: "06/2025 - 08/2025",
                 location: "Temara, Morocco",
                 tasks: [
-                    "Designing an automated private cloud on VMware vSphere.",
-                    "Setting up TrueNAS, Ansible automation, Wazuh security, and Veeam backup.",
+                    "Deployed a VMware vSphere private cloud with TrueNAS shared storage and Ansible-based virtual machine provisioning.",
+                    "Integrated PRTG monitoring, Veeam backup and recovery, and Wazuh security monitoring.",
                 ],
             },
             {
@@ -541,9 +555,9 @@ export const en = {
         ],
     },
     contact: {
-        heading: "Let's automate the future together.",
+        heading: "Let's build reliable platforms together.",
         subheading:
-            "If you're looking for a Cloud & DevOps PFE intern who cares about reliability, automation and people, I'd love to talk.",
+            "I recently completed a Backend Java internship with Oracle Cloud Infrastructure and am open to full-time Cloud, DevOps, Platform, or Backend Java roles in Morocco and internationally.",
         form: {
             nameLabel: "Name",
             namePlaceholder: "Your name",
@@ -551,7 +565,7 @@ export const en = {
             emailPlaceholder: "you@company.com",
             messageLabel: "Message",
             messagePlaceholder:
-                "Tell me a bit about your team, projects, or expectations for the PFE.",
+                "Tell me about your team, the role, or the problems you are solving.",
             submitLabel: "Send message",
             staticNote:
                 "This form sends directly via EmailJS. You can update the template or provider later if needed.",
@@ -567,7 +581,7 @@ export const en = {
         meta: {
             location: "Based in Morocco",
             availability:
-                "Currently seeking an end-of-study (PFE) internship in Cloud & DevOps.",
+                "Available for full-time opportunities from October 2026 in Morocco and internationally.",
         },
         status: {
             idle: "Send message",

@@ -56,11 +56,20 @@ export function HeroSection() {
                             <span>{hero.ctaViewProjects}</span>
                         </a>
                         <a
-                            href={prefix(content.hero.resumeUrl)}
+                            href={prefix(hero.cloudResumeUrl)}
+                            download
                             className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-black px-5 py-2.5 text-sm font-semibold text-zinc-200 shadow-sm transition hover:bg-zinc-900"
                         >
                             <Download className="h-4 w-4" />
-                            <span>{hero.ctaDownloadResume}</span>
+                            <span>{hero.ctaCloudResume}</span>
+                        </a>
+                        <a
+                            href={prefix(hero.backendResumeUrl)}
+                            download
+                            className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-black px-5 py-2.5 text-sm font-semibold text-zinc-200 shadow-sm transition hover:bg-zinc-900"
+                        >
+                            <Download className="h-4 w-4" />
+                            <span>{hero.ctaBackendResume}</span>
                         </a>
                     </div>
 
@@ -78,4 +87,3 @@ export function HeroSection() {
         </motion.section>
     );
 }
-

@@ -33,7 +33,7 @@ export const notoTifinagh = Noto_Sans_Tifinagh({
 export const metadata: Metadata = {
   title: "Abdelilah IKBI | Cloud & DevOps Portfolio",
   description:
-    "Cloud & DevOps engineering student at INPT seeking an end-of-study (PFE) internship. Focused on automation, cloud-native platforms, and DevOps culture.",
+    "Cloud, DevOps & Platform engineering profile with a recently completed Backend Java internship at Oracle Cloud Infrastructure. Open to full-time roles in Morocco and internationally.",
 };
 
 export default function RootLayout({

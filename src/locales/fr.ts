@@ -34,7 +34,7 @@ export const fr = {
         endorsements: "Avis",
         guestbook: "Livre d'Or",
         contact: "Contact",
-        subtitle: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
+        subtitle: "Ingénierie Cloud, DevOps & Plateforme · Backend Java",
     },
     common: {
         present: "Présent",
@@ -45,16 +45,18 @@ export const fr = {
     },
     hero: {
         avatar: "/ikbi.jpg",
-        badge: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
-        bio: "Élève ingénieur à l'INPT spécialisé en Cloud, Infrastructure et DevOps.",
-        statusDot: "Ouvert aux opportunités PFE",
+        badge: "Ingénieur Cloud, DevOps & Plateforme",
+        bio: "Diplômé ingénieur de l'INPT, spécialisé en systèmes distribués et cloud. Je viens de terminer un stage en développement Java Backend chez Oracle Cloud Infrastructure, où j'ai travaillé sur des services Java, Kubernetes, CI/CD, Terraform et des plateformes cloud.",
+        statusDot: "Ouvert aux postes à temps plein",
         location: "Basé au Maroc",
         remote: "Ouvert à l'International & Remote",
-        locationMeta: "Basé au Maroc • Ouvert au Télétravail & International",
-        metaLine: "Basé au Maroc • Ouvert au Télétravail & International",
+        locationMeta: "Basé au Maroc · Ouvert aux opportunités au Maroc et à l'international",
+        metaLine: "Basé au Maroc · Ouvert aux opportunités au Maroc et à l'international",
         ctaViewProjects: "Voir les Projets",
-        ctaDownloadResume: "Télécharger le CV",
-        resumeUrl: "/resume-fr.pdf",
+        ctaCloudResume: "CV Cloud & DevOps",
+        ctaBackendResume: "CV Backend Java",
+        cloudResumeUrl: "/resume-fr.pdf",
+        backendResumeUrl: "/resume-backend-fr.pdf",
         openToOpportunities: "Ouvert aux opportunités internationales et au télétravail",
         engineeringMeetsHumanity: "Quand l'ingénierie rencontre l'humain",
         snapshotTitle: "Instantané",
@@ -96,22 +98,22 @@ export const fr = {
     about: {
         heading: "À Propos",
         subheading:
-            "Un esprit d'ingénieur fondé sur l'automatisation et la fiabilité, avec un côté humain façonné par la course à pied, la communauté et la curiosité.",
+            "Une approche de l'ingénierie cloud et plateforme axée sur l'automatisation et la fiabilité, nourrie par l'expérience pratique et la collaboration.",
         bio:
             "Un esprit d'ingénieur fondé sur l'automatisation et la fiabilité, avec un côté humain façonné par la course à pied, la communauté et la curiosité.",
         engineeringTitle: "Profil Ingénieur",
         profileTitle: "Profil Ingénieur",
         profileItems: [
-            "Élève ingénieur Cloud & DevOps à l'INPT spécialisé dans les systèmes ubiquitaires et distribués, le cloud et l'IoT.",
-            "Passionné par l'automatisation, l'Infrastructure as Code (IaC) et la construction de plateformes cloud-native fiables.",
-            "Pratique concrète sur VMware, Azure, AWS, Kubernetes, pipelines CI/CD et outils d'observabilité.",
+            "Diplômé ingénieur de l'INPT, spécialisé en systèmes distribués et cloud, avec un intérêt pour le Cloud, le DevOps et l'ingénierie plateforme.",
+            "Stage en développement Java Backend effectué en 2026 au sein de l'équipe Oracle Cloud Subscriptions d'Oracle Cloud Infrastructure.",
+            "Expérience pratique en services Java, OCI, AWS, Azure, VMware, Kubernetes, CI/CD, Terraform, Ansible et observabilité.",
         ],
         beyondCodeTitle: "Au-delà du Code",
         beyondTitle: "Au-delà du Code",
         beyondItems: [
             "Fondateur de INPT Runners, rassemblant les gens autour de la discipline, de la régularité et du bien-être.",
             "Lecteur curieux intéressé par la technologie, le leadership et le développement personnel.",
-            "J'aime bâtir des communautés et des initiatives où les gens peuvent grandir ensemble au-delà des cours.",
+            "J'aime bâtir des communautés et des initiatives où les gens peuvent grandir ensemble au-delà du cadre professionnel.",
         ],
         languagesTitle: "Langues",
         languagesSubtitle: "Communication multilingue",
@@ -125,7 +127,7 @@ export const fr = {
             {
                 id: "cloudVirtualization",
                 label: "Cloud & virtualisation",
-                items: ["AWS", "Azure", "VMware vSphere", "OpenStack", "TrueNAS"],
+                items: ["Oracle Cloud Infrastructure (OCI)", "AWS", "Azure", "VMware vSphere", "OpenStack", "TrueNAS"],
             },
             {
                 id: "devOpsCiCd",
@@ -146,6 +148,7 @@ export const fr = {
                 id: "monitoringSecurity",
                 label: "Monitoring & Sécurité",
                 items: [
+                    "OCI Monitoring & MQL",
                     "Grafana",
                     "Prometheus",
                     "Application Insights",
@@ -168,7 +171,7 @@ export const fr = {
             {
                 id: "programming",
                 label: "Programmation",
-                items: ["Python", "JavaScript", "Java", "FastAPI", "Streamlit", "LangChain"],
+                items: ["Java", "Spring Boot", "Dropwizard", "Guice", "Hibernate", "SQL", "Python", "JavaScript", "FastAPI", "LangChain"],
             },
             {
                 id: "architecture",
@@ -184,7 +187,7 @@ export const fr = {
             {
                 institution: "Institut National des Postes et Télécommunications (INPT)",
                 degree: "Ingénierie des systèmes ubiquistes et distribués - Cloud et IoT",
-                period: "09/2023 - Présent",
+                period: "09/2023 - 2026",
                 location: "Rabat",
             },
             {
@@ -204,16 +207,27 @@ export const fr = {
     experience: {
         heading: "Expérience",
         subheading:
-            "Des rôles concrets appliquant cloud, automatisation et données dans des environnements réels.",
+            "Des expériences en infrastructure cloud et en développement backend dans des environnements proches de la production.",
         items: [
+            {
+                role: "Stagiaire Backend Java",
+                company: "Oracle Cloud Subscriptions (OCI)",
+                period: "03/2026 - 09/2026",
+                location: "Casablanca, Maroc",
+                tasks: [
+                    "Conception de Mastering Auditor, framework Java configurable (Dropwizard, Guice, Hibernate) pour des contrôles asynchrones planifiés avec isolation des erreurs par audit.",
+                    "Création d'un générateur commun de requêtes SQL paramétrées et sécurisées pour détecter les états bloqués et transitions manquantes.",
+                    "Ajout de métriques OCI Monitoring dimensionnées et d'alarmes MQL par environnement gérées avec Terraform ; validation sur Dev2 et Preprod avec JUnit, Mockito et H2.",
+                ],
+            },
             {
                 role: "Stagiaire Infrastructure Cloud",
                 company: "MAROC DATACENTER (MDC)",
                 period: "06/2025 - 08/2025",
                 location: "Témara, Maroc",
                 tasks: [
-                    "Conception d'un cloud privé automatisé sur VMware vSphere.",
-                    "Mise en place de TrueNAS, automatisation Ansible, sécurité Wazuh et sauvegarde Veeam.",
+                    "Déploiement d'un cloud privé VMware vSphere avec stockage partagé TrueNAS et provisionnement des machines virtuelles via Ansible.",
+                    "Intégration de la supervision PRTG, des sauvegardes et restaurations Veeam, et de la supervision de sécurité Wazuh.",
                 ],
             },
             {
@@ -549,9 +563,9 @@ export const fr = {
         ],
     },
     contact: {
-        heading: "Construisons l'automatisation de demain.",
+        heading: "Construisons ensemble des plateformes fiables.",
         subheading:
-            "Si vous recherchez un stagiaire PFE Cloud & DevOps qui se soucie de la fiabilité, de l'automatisation et des personnes, discutons-en.",
+            "Après un stage en développement Java Backend chez Oracle Cloud Infrastructure, je suis ouvert à des postes à temps plein en Cloud, DevOps, plateforme ou Backend Java au Maroc et à l'international.",
         form: {
             nameLabel: "Nom",
             namePlaceholder: "Votre nom",
@@ -559,7 +573,7 @@ export const fr = {
             emailPlaceholder: "vous@entreprise.com",
             messageLabel: "Message",
             messagePlaceholder:
-                "Parlez-moi de votre équipe, de vos projets ou de vos attentes pour le PFE.",
+                "Parlez-moi de votre équipe, du poste ou des défis que vous souhaitez relever.",
             submitLabel: "Envoyer le message",
             staticNote:
                 "Ce formulaire envoie directement via EmailJS. Vous pourrez adapter le template ou le fournisseur plus tard.",
@@ -575,7 +589,7 @@ export const fr = {
         meta: {
             location: "Basé au Maroc",
             availability:
-                "Actuellement à la recherche d'un stage de fin d'études (PFE) en Cloud & DevOps.",
+                "Disponible pour un poste à temps plein à partir d'octobre 2026, au Maroc et à l'international.",
         },
         status: {
             idle: "Envoyer le message",

@@ -33,9 +33,9 @@ export type Profile = {
 
 export const profile: Profile = {
     name: "Abdelilah IKBI",
-    title: "Cloud, Infrastructure & DevOps Engineering Student",
-    goal: "Combining technical discipline with a human-centric approach to automation.",
-    location: "Morocco (Open to international/remote)",
+    title: "Cloud, DevOps & Platform Engineer",
+    goal: "Building reliable cloud platforms and backend services through automation and engineering discipline.",
+    location: "Morocco (open to opportunities in Morocco and internationally)",
     email: "abdeikbi200@gmail.com",
     phone: "+212 625125152",
     linkedin: "https://www.linkedin.com/in/abdelilah-ikbi-103597283/",
@@ -56,13 +56,24 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
     {
+        role: "Backend Java Intern",
+        company: "Oracle Cloud Subscriptions (OCI)",
+        period: "03/2026 - 09/2026",
+        location: "Casablanca, Morocco",
+        tasks: [
+            "Built a configuration-driven Java audit framework with Dropwizard, Guice, and Hibernate for scheduled operational checks.",
+            "Implemented safe, parameterized SQL detectors and automated tests with JUnit, Mockito, and H2.",
+            "Added OCI Monitoring metrics and Terraform-managed MQL alarms, and validated deployments across development and pre-production environments.",
+        ],
+    },
+    {
         role: "Cloud Infrastructure Intern",
         company: "MAROC DATACENTER (MDC)",
         period: "06/2025 - 08/2025",
         location: "Temara, Morocco",
         tasks: [
-            "Designing an automated private cloud on VMware vSphere.",
-            "Setting up TrueNAS, Ansible automation, Wazuh security, and Veeam backup.",
+            "Deployed a VMware vSphere private cloud with TrueNAS shared storage and Ansible-based virtual machine provisioning.",
+            "Integrated PRTG monitoring, Veeam backup and recovery, and Wazuh security monitoring.",
         ],
     },
     {
@@ -121,25 +132,25 @@ export type Skills = {
 };
 
 export const skills: Skills = {
-    Cloud: ["AWS", "Azure", "OpenStack", "VMware vSphere"],
+    Cloud: ["Oracle Cloud Infrastructure (OCI)", "AWS", "Azure", "OpenStack", "VMware vSphere"],
     DevOps: ["Jenkins", "GitHub Actions", "GitLab CI", "Docker", "Kubernetes"],
     IaC: ["Terraform", "Ansible", "Bicep"],
-    Monitoring: ["Grafana", "Prometheus", "Wazuh", "PRTG"],
-    Programming: ["Python", "Java", "JavaScript", "Bash"],
+    Monitoring: ["OCI Monitoring", "Grafana", "Prometheus", "Wazuh", "PRTG", "Veeam"],
+    Programming: ["Java", "Spring Boot", "Dropwizard", "SQL", "Python", "JavaScript", "Bash"],
 };
 
 export const languages = ["English", "French", "Arabic", "Tamazight"];
 
 export const about = {
     technical: [
-        "Cloud & DevOps engineering student at INPT specializing in ubiquitous and distributed systems, cloud, and IoT.",
-        "Passionate about automation, infrastructure as code, and building reliable cloud-native platforms.",
-        "Hands-on with VMware, Azure, AWS, Kubernetes, CI/CD pipelines, and observability tooling.",
+        "INPT engineering graduate specializing in distributed systems and cloud, focused on Cloud, DevOps, and platform engineering.",
+        "Completed a Backend Java internship with Oracle Cloud Infrastructure's Oracle Cloud Subscriptions team in 2026.",
+        "Hands-on with Java services, OCI, AWS, Azure, VMware, Kubernetes, CI/CD, Terraform, Ansible, and observability.",
     ],
     beyondCode: [
         "Founder of INPT Runners, bringing people together around discipline, consistency, and wellbeing.",
         "Curious reader interested in technology, leadership, and personal growth.",
-        "Enjoy building communities and initiatives where people can grow together beyond the classroom.",
+        "Enjoy building communities and initiatives where people can grow together beyond the workplace.",
     ],
 };
 
@@ -178,5 +189,5 @@ export const volunteering: VolunteeringItem[] = [
 export const contact = {
     email: profile.email,
     location: profile.location,
-    availability: "Currently seeking an end-of-study (PFE) internship in Cloud & DevOps.",
+    availability: "Available for full-time opportunities from October 2026 in Morocco and internationally.",
 };

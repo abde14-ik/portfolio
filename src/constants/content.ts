@@ -13,14 +13,17 @@ export const content = {
         stravaAria: "Strava profile",
     },
     navbar: {
-        subtitle: "Cloud & DevOps Engineering Student",
+        subtitle: "Cloud, DevOps & Platform Engineering · Backend Java",
     },
     hero: {
         avatar: "/ikbi.jpg",
-        badge: "Cloud & DevOps Engineering · PFE Internship",
+        badge: "Cloud, DevOps & Platform Engineer",
         ctaViewProjects: "View Projects",
-        ctaDownloadResume: "Download Resume",
-        openToOpportunities: "Open to international & remote opportunities",
+        ctaCloudResume: "Cloud & DevOps CV",
+        ctaBackendResume: "Backend Java CV",
+        cloudResumeUrl: "/resume.pdf",
+        backendResumeUrl: "/resume-backend.pdf",
+        openToOpportunities: "Open to opportunities in Morocco and internationally",
         engineeringMeetsHumanity: "Engineering meets humanity",
         snapshotTitle: "Snapshot",
         snapshotFocusLabel: "Focus",
@@ -43,7 +46,7 @@ export const content = {
     about: {
         heading: "About Me",
         subheading:
-            "An engineering mindset grounded in automation and reliability, with a human side shaped by running, community and curiosity.",
+            "Cloud and platform engineering grounded in automation and reliability, shaped by hands-on experience and a commitment to building useful systems with people.",
         engineeringTitle: "Engineering Profile",
         beyondCodeTitle: "Beyond the Code",
         languagesTitle: "Languages",
@@ -64,7 +67,7 @@ export const content = {
     experience: {
         heading: "Experience",
         subheading:
-            "Hands-on roles applying cloud, automation and data skills in real environments.",
+            "Experience delivering cloud infrastructure and backend engineering work in production-minded environments.",
     },
     projects: {
         heading: "Featured Projects",
@@ -130,7 +133,7 @@ export const content = {
     contact: {
         heading: "Let's automate the future together.",
         subheading:
-            "If you're looking for a Cloud & DevOps PFE intern who cares about reliability, automation and people, I'd love to talk.",
+            "Recently completed a Backend Java internship with Oracle Cloud Infrastructure and open to full-time Cloud, DevOps, Platform, or Backend Java roles in Morocco and internationally.",
         form: {
             nameLabel: "Name",
             namePlaceholder: "Your name",
@@ -138,7 +141,7 @@ export const content = {
             emailPlaceholder: "you@company.com",
             messageLabel: "Message",
             messagePlaceholder:
-                "Tell me a bit about your team, projects, or expectations for the PFE.",
+                "Tell me about your team, the role, or the problems you are solving.",
             submitLabel: "Send (static demo)",
             staticNote:
                 "This is a static form for the portfolio demo. You can connect it later to your preferred email or form provider.",
