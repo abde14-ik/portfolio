@@ -16,52 +16,52 @@ export function EducationSection() {
     return (
         <motion.section
             id="education"
-            className="scroll-mt-24 space-y-6"
+            className="scroll-mt-28 space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
+            <header className="mb-8 max-w-2xl space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {content.education.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {content.education.subheading}
                 </p>
             </header>
 
             <div className="relative mt-2">
-                <div className="pointer-events-none absolute left-[0.4rem] top-0 bottom-0 hidden w-[2px] bg-gradient-to-b from-violet-600 via-royal to-indigo-900 sm:block" />
+                <div className="pointer-events-none absolute bottom-0 left-[0.4rem] top-0 hidden w-px bg-white/10 sm:block" />
                 <ol className="space-y-6 pl-0 sm:pl-6">
                     {items.map((item, index) => (
                         <motion.li
                             key={`${item.institution}-${item.degree}-${index}`}
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                            className="relative"
+                            className="relative pl-0 sm:pl-1"
                         >
-                            <div className="absolute -left-[0.6rem] top-3 hidden h-3 w-3 items-center justify-center rounded-full border-2 border-gold bg-midnight sm:flex" />
-                            <div className="rounded-2xl border border-violet-500/20 bg-indigo-950/30 p-4 shadow-sm shadow-slate-950/40 backdrop-blur md:p-6">
+                            <div className="absolute -left-[0.1rem] top-6 hidden h-2 w-2 rounded-full border-2 border-amber-300 bg-[#090b10] sm:block" />
+                            <div className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 sm:ml-5 sm:p-6">
                                 <div className="flex items-start justify-between gap-3">
                                     <div>
-                                        <p className="text-xs font-medium uppercase tracking-[0.16em] text-violet-300">
+                                        <p className="text-xs font-medium tracking-wide text-amber-200">
                                             {item.period}
                                         </p>
-                                        <h3 className="mt-1 text-sm font-semibold text-slate-50 sm:text-base">
+                                        <h3 className="mt-1 text-sm font-semibold leading-6 text-white sm:text-base">
                                             <span className="font-semibold">{item.degree}</span>
                                         </h3>
-                                        <p className="mt-1 text-sm italic text-slate-300">
+                                        <p className="mt-1 text-sm text-zinc-400">
                                             {item.institution}
                                         </p>
                                         {item.location && (
-                                            <p className="mt-1 text-xs text-slate-400">{item.location}</p>
+                                            <p className="mt-1 text-xs text-zinc-500">{item.location}</p>
                                         )}
                                     </div>
-                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-violet-500/15 text-violet-300">
+                                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-amber-200">
                                         <GraduationCap className="h-4 w-4" />
                                     </span>
                                 </div>

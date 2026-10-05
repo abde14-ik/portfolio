@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #090b10;
+  --foreground: #f4f4f5;
 }
 
 @theme inline {
@@ -11,41 +11,6 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-fira-code);
   --font-serif: var(--font-playfair);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-@keyframes firefly-move {
-  0% {
-    transform: translate(0, 0) scale(var(--scale, 1));
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(var(--move-x, 100px), -100vh) scale(0);
-    opacity: 0;
-  }
-}
-
-.firefly {
-  animation: firefly-move var(--duration, 14s) ease-in-out infinite alternate;
-  animation-delay: var(--delay, 0s);
-  left: var(--x, 50vw);
-  top: var(--y, 50vh);
-  transform-origin: center;
 }
 
 body {
@@ -57,4 +22,20 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgb(245 158 11 / 30%);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

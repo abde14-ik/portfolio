@@ -11,63 +11,63 @@ const sectionVariants = {
 
 export function ExperienceSection() {
     const { content } = useLanguage();
-    const items = (content.experience as any).items ?? [];
+    const items = content.experience.items;
 
     return (
         <motion.section
             id="experience"
-            className="scroll-mt-24 space-y-6"
+            className="scroll-mt-28 space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white">
+            <header className="mb-8 max-w-2xl space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {content.experience.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {content.experience.subheading}
                 </p>
             </header>
 
             <div className="relative mt-2">
-                <div className="pointer-events-none absolute left-[0.4rem] top-0 bottom-0 hidden w-[2px] bg-zinc-800 sm:block" />
+                <div className="pointer-events-none absolute bottom-0 left-[0.4rem] top-0 hidden w-px bg-white/10 sm:block" />
                 <ol className="space-y-6 pl-0 sm:pl-6">
-                    {items.map((item: any, index: number) => (
+                    {items.map((item, index) => (
                         <motion.li
                             key={`${item.company}-${item.role}-${index}`}
-                            initial={{ opacity: 0, x: 40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 12 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                            className="relative"
+                            className="relative pl-0 sm:pl-1"
                         >
-                            <div className="absolute -left-[0.6rem] top-3 hidden h-3 w-3 items-center justify-center rounded-full border-2 border-zinc-600 bg-black sm:flex" />
-                            <div className="rounded-2xl bg-[#121212] p-4 shadow-md shadow-black/60 transition-transform transition-colors hover:-translate-y-1 hover:bg-zinc-900 md:p-6">
-                                <div className="flex items-start justify-between gap-3">
-                                    <div>
-                                        <p className="text-xs font-medium uppercase tracking-[0.16em] text-violet-300">
+                            <div className="absolute -left-[0.1rem] top-6 hidden h-2 w-2 rounded-full border-2 border-amber-300 bg-[#090b10] sm:block" />
+                            <div className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 sm:ml-5 sm:p-6">
+                                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                                    <div className="min-w-0">
+                                        <p className="text-xs font-medium tracking-wide text-amber-200">
                                             {item.period}
                                         </p>
-                                        <h3 className="mt-1 text-lg md:text-xl font-extrabold tracking-tight text-white">
-                                            {item.role} · {""}
-                                            <span className="text-amber-400">{item.company}</span>
+                                        <h3 className="mt-1 text-lg font-semibold tracking-tight text-white sm:text-xl">
+                                            {item.role}
                                         </h3>
+                                        <p className="mt-1 text-sm text-zinc-300">{item.company}</p>
                                         {item.location && (
                                             <p className="mt-1 text-xs text-slate-400">{item.location}</p>
                                         )}
                                     </div>
-                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-violet-500/15 text-violet-300">
+                                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-amber-200">
                                         <Briefcase className="h-4 w-4" />
                                     </span>
                                 </div>
 
-                                <ul className="mt-3 space-y-1.5 text-sm text-slate-300 sm:text-[0.94rem]">
+                                <ul className="mt-5 space-y-2 text-sm leading-6 text-zinc-400 sm:text-[0.94rem]">
                                     {item.tasks.map((task: string) => (
                                         <li key={task} className="flex gap-2">
-                                            <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-gold" />
+                                            <span className="mt-[0.65rem] h-1 w-1 shrink-0 rounded-full bg-amber-300" />
                                             <span>{task}</span>
                                         </li>
                                     ))}

@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Activity, Github, Linkedin, Menu, X } from "lucide-react";
-import { Cairo, Noto_Sans_Tifinagh } from "next/font/google";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { profile } from "@/constants/data";
 import { prefix } from "@/lib/utils";
 import { AvatarModal } from "@/components/avatar-modal";
@@ -13,38 +12,13 @@ import { NavDropdown } from "@/components/nav-dropdown";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLanguage } from "@/context/language-context";
 
-const cairo = Cairo({
-    subsets: ["arabic"],
-    weight: ["700"],
-});
-
-const notoTifinagh = Noto_Sans_Tifinagh({
-    subsets: ["tifinagh"],
-    weight: "400",
-});
-
 export function Navbar() {
     const [isAvatarOpen, setIsAvatarOpen] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [index, setIndex] = useState(0);
     const { content } = useLanguage();
 
     const nav = content.nav;
     const navbar = content.navbar ?? {};
-
-    const identities = [
-        { text: "Abdelilah IKBI", font: "font-sans", lang: "en" },
-        { text: "اقبي عبد الاله", font: cairo.className, lang: "ar" },
-        { text: "ⵉⵇⴱⵉ ⵄⴰⴱⴷ ⵍⵉⵍⴰⵀ", font: notoTifinagh.className, lang: "ber" },
-    ];
-
-    useEffect(() => {
-        const id = setInterval(() => {
-            setIndex((prev) => (prev + 1) % identities.length);
-        }, 10000);
-
-        return () => clearInterval(id);
-    }, []);
 
     const desktopLinks = (navbar.items as { id: string; label: string }[] | undefined) ?? [
         { id: "about", label: nav.about },
@@ -78,12 +52,12 @@ export function Navbar() {
 
     return (
         <>
-            <div className="flex h-16 items-center justify-between px-4 lg:pl-12 lg:pr-4">
+            <div className="flex h-[4.5rem] items-center justify-between px-1 sm:px-2 lg:pl-12 lg:pr-4">
                 <div className="flex items-center gap-3">
                     <button
                         type="button"
                         onClick={() => setIsAvatarOpen(true)}
-                        className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-zinc-700 bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                        className="relative h-10 w-10 overflow-hidden rounded-full border border-white/15 bg-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                         aria-label="Expand profile photo"
                     >
                         <motion.div layoutId="avatar-image" className="relative h-full w-full">
@@ -96,26 +70,12 @@ export function Navbar() {
                             />
                         </motion.div>
                     </button>
-                    <div className="flex flex-col leading-tight">
-                        <div className="flex flex-wrap items-center gap-1.5 min-w-[140px]">
-                            <AnimatePresence mode="wait">
-                                <motion.span
-                                    key={identities[index].text}
-                                    initial={{ opacity: 0, y: 5 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -5 }}
-                                    transition={{ duration: 0.25 }}
-                                    className={`text-sm font-semibold text-slate-100 dark:text-slate-100 ${identities[index].font}`}
-                                    lang={identities[index].lang}
-                                >
-                                    {identities[index].text}
-                                </motion.span>
-                            </AnimatePresence>
-                        </div>
-                    </div>
+                    <span className="text-sm font-semibold tracking-tight text-zinc-100 sm:text-base">
+                        {profile.name}
+                    </span>
                 </div>
 
-                <nav className="hidden items-center gap-4 lg:gap-6 text-sm font-medium text-zinc-400 md:flex">
+                <nav className="hidden items-center gap-4 text-xs font-medium text-zinc-400 lg:flex xl:gap-5 xl:text-sm">
                     {desktopLinks.map((item) => {
                         if (item.id === "community") return null;
 
@@ -123,10 +83,9 @@ export function Navbar() {
                             <a
                                 key={item.id}
                                 href={`#${item.id}`}
-                                className="group relative pb-1 transition-colors hover:text-white"
+                                className="rounded-sm py-2 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                             >
                                 {item.label}
-                                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-zinc-500 transition-transform duration-200 group-hover:scale-x-100" />
                             </a>
                         );
                     })}
@@ -147,11 +106,11 @@ export function Navbar() {
                 </nav>
 
                 <div className="flex items-center gap-2">
-                    <div className="hidden items-center gap-1.5 sm:flex">
+                    <div className="hidden items-center gap-1.5 lg:flex">
                         <Link
                             href={profile.github}
                             aria-label={content.nav.githubAria}
-                            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white"
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/[0.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -160,7 +119,7 @@ export function Navbar() {
                         <Link
                             href={profile.linkedin}
                             aria-label={content.nav.linkedinAria}
-                            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white"
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/[0.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -170,7 +129,7 @@ export function Navbar() {
                             <Link
                                 href={profile.strava}
                                 aria-label={content.nav.stravaAria}
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white"
+                                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:bg-white/[0.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -178,13 +137,13 @@ export function Navbar() {
                             </Link>
                         )}
                     </div>
-                    <div className="hidden items-center gap-3 md:flex">
+                    <div className="hidden items-center gap-3 lg:flex">
                         <div className="whitespace-nowrap">
                             <LanguageSwitcher />
                         </div>
                         <Link
                             href="#contact"
-                            className="rounded-full bg-zinc-100 px-4 py-1.5 text-sm font-medium text-black shadow-sm shadow-black/40 transition hover:bg-white whitespace-nowrap min-w-fit flex-shrink-0"
+                            className="inline-flex min-h-10 items-center rounded-lg bg-amber-400 px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10] whitespace-nowrap"
                         >
                             {navbar.contact ?? nav.contact}
                         </Link>
@@ -192,8 +151,10 @@ export function Navbar() {
                     <button
                         type="button"
                         onClick={() => setMobileOpen((prev) => !prev)}
-                        className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-white md:hidden"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-zinc-200 transition-colors hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 lg:hidden"
                         aria-label="Toggle navigation menu"
+                        aria-expanded={mobileOpen}
+                        aria-controls="mobile-navigation"
                     >
                         {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
                     </button>
@@ -201,19 +162,19 @@ export function Navbar() {
             </div>
 
             {mobileOpen && (
-                <div className="fixed inset-x-0 top-16 z-30 border-t border-zinc-800/80 bg-black/95 pb-3 pt-2 md:hidden">
-                    <div className="flex flex-col space-y-1 px-4">
+                <div id="mobile-navigation" className="fixed inset-x-0 top-[4.5rem] z-30 max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 bg-[#090b10] pb-5 pt-3 shadow-2xl shadow-black/40 lg:hidden">
+                    <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5">
                         {mobileLinks.map((item) => (
                             <a
                                 key={item.id}
                                 href={`#${item.id}`}
                                 onClick={() => setMobileOpen(false)}
-                                className="rounded-md px-2 py-2 text-sm font-medium text-slate-100 hover:bg-slate-800/80"
+                                className="min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/[0.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                             >
                                 {item.label}
                             </a>
                         ))}
-                        <div className="mt-3 flex justify-start">
+                        <div className="mt-3 border-t border-white/10 pt-4">
                             <LanguageSwitcher />
                         </div>
                     </div>

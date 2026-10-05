@@ -14,13 +14,13 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="space-y-12 sm:space-y-16">
+    <div className="space-y-14 sm:space-y-20">
       <HeroSection />
       <AboutSection />
-      <EducationSection />
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
+      <EducationSection />
       <LeadershipSection />
       <BookshelfSection />
       <LanguagesSection />

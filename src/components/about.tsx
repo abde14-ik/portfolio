@@ -11,44 +11,44 @@ const sectionVariants = {
 
 export function AboutSection() {
     const { content } = useLanguage();
-    const about = content.about as any;
+    const about = content.about;
 
     return (
         <motion.section
             id="about"
-            className="scroll-mt-24 space-y-6"
+            className="scroll-mt-28 space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
+            <header className="mb-8 max-w-2xl space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {about.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {about.subheading}
                 </p>
             </header>
 
-            <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-                <div className="rounded-2xl border border-violet-500/20 bg-indigo-950/30 p-5 shadow-sm shadow-slate-950/40 backdrop-blur">
-                    <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
+            <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 sm:p-6">
+                    <h3 className="text-sm font-semibold text-white sm:text-base">
                         {about.engineeringTitle}
                     </h3>
-                    <div className="mt-3 space-y-2 text-sm text-slate-300 sm:text-[0.94rem]">
+                    <div className="mt-4 space-y-3 text-sm leading-6 text-zinc-400 sm:text-[0.94rem]">
                         {about.profileItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}
                     </div>
                 </div>
 
-                <div className="rounded-2xl border border-slate-800/70 bg-slate-950/80 p-5 shadow-sm shadow-slate-950/40">
-                    <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
+                <div className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 sm:p-6">
+                    <h3 className="text-sm font-semibold text-white sm:text-base">
                         {about.beyondCodeTitle}
                     </h3>
-                    <div className="mt-3 space-y-2 text-sm text-slate-300 sm:text-[0.94rem]">
+                    <div className="mt-4 space-y-3 text-sm leading-6 text-zinc-400 sm:text-[0.94rem]">
                         {about.beyondItems.map((item: string) => (
                             <p key={item}>{item}</p>
                         ))}

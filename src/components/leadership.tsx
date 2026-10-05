@@ -6,7 +6,25 @@ import { ArrowRight, Maximize2 } from "lucide-react";
 import Image from "next/image";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
-import { LeadershipModal } from "@/components/leadership-modal";
+import { LeadershipModal, type LeadershipDetails } from "@/components/leadership-modal";
+
+type LeadershipItem = {
+    role: string;
+    org: string;
+    period?: string;
+    logo?: string;
+    image?: string;
+    description: string;
+    details?: LeadershipDetails;
+};
+
+type LeadershipContent = {
+    heading: string;
+    subheading: string;
+    humanSideLabel: string;
+    humanSideTitle?: string;
+    items: LeadershipItem[];
+};
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 24 },
@@ -34,13 +52,13 @@ const cardVariants = {
 
 export function LeadershipSection() {
     const { content } = useLanguage();
-    const leadership = content.leadership as any;
-    const volunteering = (leadership.items as any[]) ?? [];
+    const leadership = content.leadership as LeadershipContent;
+    const volunteering = leadership.items;
 
-    const [selectedItem, setSelectedItem] = useState<any | null>(null);
+    const [selectedItem, setSelectedItem] = useState<LeadershipItem | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleCardClick = (item: any) => {
+    const handleCardClick = (item: LeadershipItem) => {
         if (!item?.details) return;
         setSelectedItem(item);
         setIsModalOpen(true);
@@ -56,22 +74,22 @@ export function LeadershipSection() {
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-10 space-y-4">
+            <header className="mb-8 max-w-2xl space-y-3">
                 <div className="flex items-center gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">
                         {leadership.humanSideLabel}
                     </p>
-                    <div className="h-px flex-1 bg-gradient-to-r from-amber-300/60 to-transparent" />
+                    <div className="h-px flex-1 bg-white/10" />
                 </div>
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {leadership.humanSideTitle ?? leadership.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {leadership.subheading}
                 </p>
             </header>
 
-            <div className="rounded-3xl border border-amber-400/50 bg-gradient-to-br from-amber-500/10 via-slate-950/90 to-slate-950/95 p-5 shadow-[0_0_40px_rgba(248,250,252,0.06)] backdrop-blur-xl">
+            <div className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-4 sm:p-5">
                 <motion.div
                     className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3"
                     variants={cardsContainerVariants}
@@ -88,15 +106,7 @@ export function LeadershipSection() {
                                 key={`${item.org}-${item.role}`}
                                 onClick={() => handleCardClick(item)}
                                 variants={cardVariants}
-                                className={`group relative flex flex-col overflow-hidden rounded-xl border border-white/5 bg-zinc-900/50 p-4 text-sm text-slate-200 shadow-md shadow-slate-950/60 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/30 ${item.details ? "cursor-pointer" : "cursor-default opacity-80"}`}
-                                onMouseMove={(event) => {
-                                    const card = event.currentTarget;
-                                    const rect = card.getBoundingClientRect();
-                                    const x = event.clientX - rect.left;
-                                    const y = event.clientY - rect.top;
-                                    card.style.setProperty("--mouse-x", `${x}px`);
-                                    card.style.setProperty("--mouse-y", `${y}px`);
-                                }}
+                                className={`group relative flex flex-col overflow-hidden rounded-lg border border-white/[0.09] bg-black/20 p-4 text-sm text-zinc-200 transition-colors duration-200 hover:border-amber-300/25 hover:bg-white/[0.03] ${item.details ? "cursor-pointer" : "cursor-default opacity-80"}`}
                             >
                                 {teaserImage && (
                                     <div className="pointer-events-none absolute inset-0">
@@ -104,24 +114,16 @@ export function LeadershipSection() {
                                             src={prefix(teaserImage)}
                                             alt={`${item.org} background`}
                                             fill
-                                            className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-30"
+                                            className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-20"
                                             sizes="(min-width: 768px) 400px, 100vw"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/90 to-midnight/40" />
                                     </div>
                                 )}
 
-                                <div
-                                    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                    style={{
-                                        background:
-                                            "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139,92,246,0.18), transparent 40%)",
-                                    }}
-                                />
-
                                 {item.details && (
                                     <div className="pointer-events-none absolute right-3 top-3 z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-black/70 text-white/20 shadow-sm shadow-black/60 group-hover:text-amber-300">
+                                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-black/70 text-zinc-300">
                                             <Maximize2 className="h-3 w-3" />
                                         </span>
                                     </div>
@@ -143,20 +145,20 @@ export function LeadershipSection() {
 
                                     <div className="flex items-start gap-2">
                                         <div className="space-y-2">
-                                            <p className="text-[0.65rem] font-mono uppercase tracking-[0.18em] text-gold">
+                                            <p className="text-[0.68rem] font-medium uppercase tracking-wide text-zinc-500">
                                                 {item.period} · {item.org}
                                             </p>
-                                            <h3 className="text-lg md:text-xl font-semibold text-slate-100">
+                                            <h3 className="text-lg font-semibold text-white md:text-xl">
                                                 {item.role}
                                             </h3>
                                         </div>
                                     </div>
 
-                                    <p className="mt-3 text-xs text-slate-300 line-clamp-3">{item.description}</p>
+                                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-zinc-400">{item.description}</p>
 
                                     {item.details && (
                                         <div className="mt-4">
-                                            <div className="group/cta inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-medium text-slate-100 shadow-sm shadow-black/40 backdrop-blur-sm transform translate-y-2 opacity-0 transition hover:border-gold/50 hover:bg-gold/10 hover:text-gold group-hover:translate-y-0 group-hover:opacity-100">
+                                            <div className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-300 transition-colors group-hover:border-amber-300/30 group-hover:text-amber-100">
                                                 <span>See impact</span>
                                                 <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover/cta:translate-x-1" />
                                             </div>

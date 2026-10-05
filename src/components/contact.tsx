@@ -50,26 +50,26 @@ export function ContactSection() {
     return (
         <motion.section
             id="contact"
-            className="scroll-mt-24 space-y-6"
+            className="scroll-mt-28 space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-slate-100">
+            <header className="mb-8 max-w-2xl space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {content.contact.heading}
                 </h2>
-                <p className="text-sm text-slate-400 sm:text-base">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {content.contact.subheading}
                 </p>
             </header>
 
-            <div className="grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+            <div className="grid gap-4 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
                 <form
                     ref={formRef}
-                    className="space-y-4 rounded-2xl border border-violet-500/25 bg-indigo-950/40 p-5 shadow-sm shadow-slate-950/40 backdrop-blur"
+                    className="space-y-5 rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 sm:p-6"
                     onSubmit={sendEmail}
                 >
                     <div className="grid gap-4 sm:grid-cols-2">
@@ -81,7 +81,7 @@ export function ContactSection() {
                                 id="name"
                                 name="user_name"
                                 type="text"
-                                className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                                className="min-h-11 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/20"
                                 placeholder={content.contact.form.namePlaceholder}
                             />
                         </div>
@@ -93,7 +93,7 @@ export function ContactSection() {
                                 id="email"
                                 name="user_email"
                                 type="email"
-                                className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                                className="min-h-11 w-full rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/20"
                                 placeholder={content.contact.form.emailPlaceholder}
                             />
                         </div>
@@ -106,14 +106,14 @@ export function ContactSection() {
                             id="message"
                             name="message"
                             rows={4}
-                            className="w-full resize-none rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
+                            className="w-full resize-y rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-amber-300/60 focus:ring-2 focus:ring-amber-300/20"
                             placeholder={content.contact.form.messagePlaceholder}
                         />
                     </div>
                     <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="inline-flex items-center justify-center rounded-full border border-gold/40 bg-gradient-to-r from-royal to-royalDark px-5 py-2.5 text-sm font-semibold text-slate-50 shadow-lg shadow-gold/30 transition hover:border-gold/70 hover:from-royalDark hover:to-royal disabled:cursor-not-allowed disabled:opacity-70"
+                        className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-400 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10] disabled:cursor-not-allowed disabled:opacity-70"
                     >
                         {status === "loading"
                             ? content.contact.states.sending
@@ -125,33 +125,33 @@ export function ContactSection() {
                     </button>
                 </form>
 
-                <div className="space-y-4 rounded-2xl border border-violet-500/25 bg-indigo-950/40 p-5 text-sm text-slate-200 shadow-sm shadow-slate-950/40 backdrop-blur">
+                <div className="space-y-5 rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 text-sm text-zinc-200 sm:p-6">
                     <dl className="space-y-2 text-sm">
                         <div>
-                            <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                            <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
                                 {content.contact.info.emailLabel}
                             </dt>
                             <dd className="mt-1">
                                 <a
                                     href={`mailto:${contact.email}`}
-                                    className="inline-flex items-center gap-2 text-gold hover:text-amber-200"
+                                    className="inline-flex max-w-full items-center gap-2 text-amber-200 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                                 >
-                                    <Mail className="h-3.5 w-3.5" />
-                                    <span>{contact.email}</span>
+                                    <Mail className="h-3.5 w-3.5 shrink-0" />
+                                    <span className="break-all">{contact.email}</span>
                                 </a>
                             </dd>
                         </div>
                         <div>
-                            <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                            <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
                                 {content.contact.info.locationLabel}
                             </dt>
-                            <dd className="mt-1 text-slate-200">{content.contact.meta.location}</dd>
+                            <dd className="mt-1 text-zinc-200">{content.contact.meta.location}</dd>
                         </div>
                         <div>
-                            <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                            <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
                                 {content.contact.info.availabilityLabel}
                             </dt>
-                            <dd className="mt-1 text-slate-200">{content.contact.meta.availability}</dd>
+                            <dd className="mt-1 text-zinc-200">{content.contact.meta.availability}</dd>
                         </div>
                     </dl>
 
@@ -160,7 +160,7 @@ export function ContactSection() {
                             href={profile.linkedin}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-royal hover:text-royal"
+                            className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-300 transition-colors hover:border-amber-300/30 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                         >
                             <Linkedin className="h-3.5 w-3.5" />
                             <span>{content.contact.info.linkedinLabel}</span>
@@ -169,7 +169,7 @@ export function ContactSection() {
                             href={profile.github}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-gold hover:text-gold"
+                            className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-300 transition-colors hover:border-amber-300/30 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                         >
                             <Github className="h-3.5 w-3.5" />
                             <span>{content.contact.info.githubLabel}</span>
@@ -179,7 +179,7 @@ export function ContactSection() {
                                 href={profile.strava}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full border border-violet-600/40 bg-midnight/80 px-3 py-1.5 text-xs font-medium text-slate-200 hover:border-gold hover:text-amber-200"
+                                className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-300 transition-colors hover:border-amber-300/30 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                             >
                                 <Activity className="h-3.5 w-3.5" />
                                 <span>{content.contact.info.stravaLabel}</span>

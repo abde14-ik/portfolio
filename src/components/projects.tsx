@@ -16,65 +16,63 @@ export function ProjectsSection() {
     return (
         <motion.section
             id="projects"
-            className="scroll-mt-24 space-y-6"
+            className="scroll-mt-28 space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <header className="mb-12 space-y-3">
-                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-white">
+            <header className="mb-8 max-w-2xl space-y-3">
+                <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     {content.projects.heading}
                 </h2>
-                <p className="text-sm text-zinc-400 sm:text-base leading-relaxed">
+                <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                     {content.projects.subheading}
                 </p>
             </header>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
                 {projects.map((project) => {
-                    const codeHref = (project as any).githubUrl ?? project.codeUrl;
+                    const codeHref = project.githubUrl;
 
                     return (
                         <motion.article
                             key={project.name}
-                            className="group flex h-full flex-col rounded-2xl bg-[#121212] p-4 shadow-md shadow-black/60 transition-transform transition-colors hover:-translate-y-1.5 hover:bg-zinc-900"
-                            whileHover={{ translateY: -4 }}
-                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            className="group flex h-full flex-col rounded-xl border border-white/[0.09] bg-white/[0.025] p-5 transition-colors hover:border-amber-300/30 hover:bg-white/[0.045] sm:p-6"
                         >
                             <div className="flex items-start justify-between gap-3">
                                 <div>
-                                    <h3 className="text-sm font-extrabold tracking-tight text-white sm:text-base">
+                                    <h3 className="text-base font-semibold tracking-tight text-white sm:text-lg">
                                         {project.name}
                                     </h3>
-                                    <p className="mt-2 text-xs text-zinc-400 sm:text-[0.9rem] leading-relaxed">
+                                    <p className="mt-3 text-sm leading-6 text-zinc-400">
                                         {project.desc}
                                     </p>
                                 </div>
-                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900 text-zinc-200">
+                                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-amber-200">
                                     <Code2 className="h-4 w-4" />
                                 </span>
                             </div>
 
-                            <div className="mt-3 flex flex-wrap gap-2">
+                            <div className="mt-5 flex flex-wrap gap-2">
                                 {project.tech.map((tool) => (
                                     <span
                                         key={tool}
-                                        className="inline-flex items-center rounded-full border border-white/5 bg-black/40 px-3 py-1 text-[0.7rem] font-medium text-zinc-200 font-mono"
+                                        className="inline-flex items-center rounded-md border border-white/[0.09] bg-black/20 px-2.5 py-1 text-xs font-medium text-zinc-300"
                                     >
                                         {tool}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="mt-4 flex flex-wrap gap-2">
+                            <div className="mt-auto flex flex-wrap gap-2 pt-6">
                                 {codeHref && (
                                     <a
                                         href={codeHref}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-900 px-3 py-1.5 text-[0.7rem] font-medium text-zinc-100 hover:bg-zinc-800"
+                                        className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-amber-300/30 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                                     >
                                         <Code2 className="h-3 w-3" />
                                         <span>{content.common.viewCode}</span>
@@ -85,7 +83,7 @@ export function ProjectsSection() {
                                         href={project.liveUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-zinc-100 px-3 py-1.5 text-[0.7rem] font-medium text-black shadow-sm hover:bg-white"
+                                        className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-zinc-200 transition-colors hover:border-amber-300/30 hover:text-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
                                     >
                                         <ExternalLink className="h-3 w-3" />
                                         <span>{content.common.liveDemo}</span>
