@@ -95,7 +95,6 @@ export function ContactSection() {
                                 type="email"
                                 className="w-full rounded-lg border border-violet-900/50 bg-midnight/80 px-3 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-gold focus:ring-1 focus:ring-gold"
                                 placeholder={content.contact.form.emailPlaceholder}
-                                defaultValue={profile.email}
                             />
                         </div>
                     </div>

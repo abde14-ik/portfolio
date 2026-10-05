@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight, Download, MapPin } from "lucide-react";
 import { profile } from "@/constants/data";
-import { StatusBento } from "@/components/status-bento";
 import { prefix } from "@/lib/utils";
 import { useLanguage } from "@/context/language-context";
 
@@ -25,8 +24,7 @@ export function HeroSection() {
             variants={heroVariants}
             transition={{ duration: 0.7, ease: "easeOut" }}
         >
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-16 xl:grid-cols-[1.1fr_0.9fr] xl:items-center">
-                {/* Left column: intro and CTAs */}
+            <div className="mx-auto max-w-4xl">
                 <div className="relative z-10 space-y-6">
                     <p className="flex items-center gap-2 text-[0.7rem] font-semibold text-amber-400 sm:text-xs">
                         <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
@@ -79,10 +77,6 @@ export function HeroSection() {
                     </p>
                 </div>
 
-                {/* Right column: Status bento grid */}
-                <div className="mt-8 xl:mt-12 md:pl-6 lg:pl-8">
-                    <StatusBento />
-                </div>
             </div>
         </motion.section>
     );
